@@ -105,6 +105,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
 
 " Better indentation
 vnoremap < <gv
@@ -337,7 +339,7 @@ let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
 let g:ack_use_dispatch = 1
 
 " fugitive Ggrep
-nnoremap <Leader>q :Ggrep <C-R><C-W>
+nnoremap <Leader>r :Ggrep <C-R><C-W>
 
 " Vim-LaTex setup
 " set shellslash
