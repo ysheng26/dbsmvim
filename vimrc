@@ -449,6 +449,7 @@ let g:neocomplcache_enable_at_startup = 0
 " autocmd FileType java nnoremap <silent> <buffer> <Leader>d :JavaDocSearch -x declarations<cr>
 " autocmd FileType java nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
 " autocmd FileType java nnoremap <silent> <buffer> K :JavaDocPreview<cr>
+" autocmd FileType java setlocal completeopt-=preview
 
 " Eclim python settings
 " autocmd FileType python nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
