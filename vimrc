@@ -50,6 +50,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'toyamarinyon/vim-swift'
@@ -352,6 +353,12 @@ let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 1
 let g:jedi#show_call_signatures = 0
 autocmd FileType python setlocal completeopt-=preview
+
+" ruby autocomplete
+" :h ft-ruby-omni
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
 " Don't know why this does not work with jedi-vim
 " set completeopt-=preview
