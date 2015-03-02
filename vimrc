@@ -114,21 +114,11 @@ nnoremap <leader>q :q<cr>
 vnoremap < <gv
 vnoremap > >gv
 
-" Allow colors in commandline mode
-if !has("gui_running")
-    set t_Co=256
-    " Color setting for terminal
-    set background=dark
-    colorscheme solarized
-else
-    set t_Co=256
-    " Color setting for GUI
-    set background=dark
-    colorscheme solarized
-endif
+set background=dark
+colorscheme solarized
 
 " Uncomment when terminals don't have solarized color setup
-" let g:solarized_termcolors=256
+let g:solarized_termcolors=256
 
 " setup dark/light toggle button
 call togglebg#map("<F9>")
