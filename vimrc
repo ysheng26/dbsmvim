@@ -20,7 +20,6 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'ShengYun/vim-conque'
 Plugin 'ShengYun/vim-cscope-mapping'
-Plugin 'ShengYun/dbs-terminal'
 Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
@@ -418,9 +417,6 @@ set splitright
 nnoremap <Leader>z <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
-" nnoremap <Leader>2 :call DBSOpenTerminal(['iTerm.sh'])<CR>
-" nnoremap <Leader>2 :call DBSOpenTerminal(['cmd'])<CR>
-" nnoremap <Leader>3 :call DBSOpenTerminal(['sh', '--login', '-i'])<CR>
 
 " To enable YouCompleteMe
 " 1) Comment let g:loaded_youcompleteme = 1
