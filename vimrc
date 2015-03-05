@@ -114,6 +114,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 set background=dark
+" set background=light
 colorscheme solarized
 
 " Uncomment when terminals don't have solarized color setup
