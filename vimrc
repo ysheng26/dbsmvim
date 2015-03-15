@@ -115,7 +115,7 @@ vnoremap > >gv
 
 set background=dark
 " set background=light
-colorscheme solarized
+colorscheme jellybeans
 
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
@@ -136,7 +136,8 @@ set cmdheight=2
 " molokai colorscheme setup
 " If you prefer the scheme to match the original monokai background color,
 " put this in your .vimrc file:
-let g:molokai_original = 1
+" let g:molokai_original = 1
+let g:rehash256 = 1
 
 " Remove menu bar and tool bar
 set guioptions=
