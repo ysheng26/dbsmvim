@@ -408,7 +408,7 @@ let g:rainbow_conf = {
 
 " Fuzzyfinder
 nnoremap <Leader>u :FufTag<CR>
-nnoremap <Leader>7 :FufFile**\<CR>
+nnoremap <Leader>m :FufFile**\<CR>
 
 " Manage split screens
 nnoremap <Leader>1 :on<CR>
