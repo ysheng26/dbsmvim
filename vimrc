@@ -139,6 +139,11 @@ set cmdheight=2
 " let g:molokai_original = 1
 let g:rehash256 = 1
 
+" jellybeans colorscheme customize
+let g:jellybeans_overrides = {
+\    'MatchParen': { 'guifg': 'ff0000'},
+\}
+
 " Remove menu bar and tool bar
 set guioptions=
 
