@@ -242,7 +242,7 @@ inoremap <c-space> <c-x><c-o>
 nnoremap <F2> :%s/\s\+$//g <CR>
 
 " Bufexplorer
-noremap <C-Tab> :BufExplorer<CR>
+noremap <leader>be :BufExplorer<CR>
 
 " Map <Leader>- and <Leader>= to :colder and :cnewer
 nnoremap <Leader>- :colder<CR>
