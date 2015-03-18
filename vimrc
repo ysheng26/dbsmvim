@@ -226,9 +226,6 @@ nnoremap <leader><F5> :cs kill -1<CR>
     \:cs add cscope.out<CR>
     \:cs reset<CR>
 
-" F6 to toggle spell check
-nnoremap <F6> :setlocal spell! spell?<CR>
-
 " Map <C-]> with :tjump
 nnoremap <C-]> :tjump <C-R>=expand("<cword>")<CR><CR>
 
