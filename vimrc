@@ -300,9 +300,6 @@ autocmd ColorScheme * highlight clear SignColumn
 " Do not let gitgutter do the realtime update
 let g:gitgutter_realtime = 0
 
-nnoremap <leader>j :GitGutterNextHunk<cr>
-nnoremap <leader>k :GitGutterPrevHunk<cr>
-
 " neocomplcache setup
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_max_menu_width = 70
