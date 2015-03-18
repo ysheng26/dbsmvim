@@ -235,9 +235,6 @@ inoremap <c-space> <c-x><c-o>
 " Delete spaces after each line
 nnoremap <F2> :%s/\s\+$//g <CR>
 
-" Bufexplorer
-noremap <leader>be :BufExplorer<CR>
-
 " Map <Leader>- and <Leader>= to :colder and :cnewer
 nnoremap <Leader>- :colder<CR>
 nnoremap <Leader>= :cnewer<CR>
