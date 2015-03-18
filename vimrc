@@ -62,6 +62,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
+Plugin 'pangloss/vim-javascript'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
