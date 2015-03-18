@@ -120,9 +120,6 @@ colorscheme solarized
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
 
-" setup dark/light toggle button
-call togglebg#map("<F9>")
-
 " Alter torte's color
 autocmd ColorScheme torte highlight Pmenu ctermbg=grey guibg=grey
 autocmd ColorScheme torte highlight Pmenu ctermfg=black guifg=black
