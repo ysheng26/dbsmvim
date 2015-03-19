@@ -63,6 +63,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
@@ -116,7 +117,7 @@ vnoremap > >gv
 
 set background=dark
 " set background=light
-colorscheme solarized
+colorscheme jellybeans
 
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
