@@ -207,6 +207,24 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+" set foldmethod to indent if editing a python file
+autocmd FileType python set foldmethod=indent
+autocmd BufRead * normal zR
+" set indents to 4 if editing a python file
+autocmd FileType python set tabstop=4
+autocmd FileType python set softtabstop=4
+autocmd FileType python set shiftwidth=4
+
+" ruby indentation setup
+autocmd FileType ruby,eruby set tabstop=2
+autocmd FileType ruby,eruby set softtabstop=2
+autocmd FileType ruby,eruby set shiftwidth=2
+
+" web development indentation setup
+autocmd FileType html,css,javascript set tabstop=2
+autocmd FileType html,css,javascript set softtabstop=2
+autocmd FileType html,css,javascript set shiftwidth=2
+
 " Setup vimgrep
 "noremap <silent> <C-F3> :call Search_Word()<CR>:copen<CR>
 "function Search_Word()
@@ -308,14 +326,6 @@ nnoremap <C-\> :NeoComplCacheToggle<CR>
 " lock neocomplcache if writting python, jedi will take control
 autocmd FileType python execute ':NeoComplCacheLock'
 
-" set foldmethod to indent if editing a python file
-autocmd FileType python set foldmethod=indent
-autocmd BufRead * normal zR
-" set indents to 4 if editing a python file
-autocmd FileType python set tabstop=4
-autocmd FileType python set softtabstop=4
-autocmd FileType python set shiftwidth=4
-
 " setup vim-commentary for special files
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType c set commentstring=//\ %s
@@ -346,11 +356,6 @@ autocmd FileType python setlocal completeopt-=preview
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-
-" ruby indentation setup
-autocmd FileType ruby,eruby set tabstop=2
-autocmd FileType ruby,eruby set softtabstop=2
-autocmd FileType ruby,eruby set shiftwidth=2
 
 " Don't know why this does not work with jedi-vim
 " set completeopt-=preview
