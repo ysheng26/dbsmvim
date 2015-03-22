@@ -64,6 +64,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
