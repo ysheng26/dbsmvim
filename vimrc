@@ -62,6 +62,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
+Plugin 'vim-scripts/searchfold.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
@@ -417,7 +418,7 @@ set winminheight=0
 set winminwidth=0
 set splitbelow
 set splitright
-nnoremap <Leader>z <C-W>\|<C-W>_
+nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 
