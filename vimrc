@@ -119,7 +119,7 @@ vnoremap > >gv
 
 set background=dark
 " set background=light
-colorscheme molokai
+colorscheme lucius
 
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
@@ -143,6 +143,7 @@ let g:rehash256 = 1
 " jellybeans colorscheme customize
 let g:jellybeans_overrides = {
 \    'MatchParen': { 'guifg': 'ff0000'},
+\    'Search': { 'guifg': '000000', 'guibg': 'd78700'},
 \}
 
 " Remove menu bar and tool bar
