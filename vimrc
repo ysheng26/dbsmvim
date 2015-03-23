@@ -119,7 +119,7 @@ vnoremap > >gv
 
 set background=dark
 " set background=light
-colorscheme lucius
+colorscheme solarized
 
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
