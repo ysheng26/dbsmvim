@@ -183,7 +183,7 @@ set ignorecase
 
 " Set highlight search result
 set hlsearch
-nnoremap <Space> :noh<CR>
+nnoremap <Space> :nohlsearch<CR>
 
 " Set search
 set incsearch
@@ -257,7 +257,7 @@ nnoremap <C-]> :tjump <C-R>=expand("<cword>")<CR><CR>
 inoremap <c-space> <c-x><c-o>
 
 " Delete spaces after each line
-nnoremap <F2> :%s/\s\+$//g <CR>
+nnoremap <F2> :%s/\s\+$//g <CR> :nohlsearch <CR>
 
 " Map <Leader>- and <Leader>= to :colder and :cnewer
 nnoremap <Leader>- :colder<CR>
