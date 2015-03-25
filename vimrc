@@ -411,7 +411,7 @@ let g:rainbow_conf = {
     \}
 
 " taboo settings
-let g:taboo_tab_format = "%N%f%m "
+let g:taboo_tab_format = "%N %f%m "
 
 " Fuzzyfinder
 nnoremap <Leader>u :FufTag<CR>
