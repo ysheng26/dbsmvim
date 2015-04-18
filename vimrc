@@ -346,6 +346,7 @@ nnoremap <Leader>r :Ggrep <C-R><C-W>
 " Vim-LaTex setup
 " set shellslash
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
 
 " jedi-vim setup
 let g:jedi#usages_command = "<leader>s"
