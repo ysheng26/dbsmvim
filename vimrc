@@ -122,6 +122,20 @@ set background=dark
 " set background=light
 colorscheme molokai
 
+nnoremap <F9> :call DarkLightToggle()<cr>
+let g:dark_light_switch = 0
+function! DarkLightToggle()
+    if g:dark_light_switch
+        set background=dark
+        colorscheme molokai
+        let g:dark_light_switch = 0
+    else
+        set background=light
+        colorscheme lucius
+        let g:dark_light_switch = 1
+    endif
+endfunction
+
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
 
