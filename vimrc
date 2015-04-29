@@ -67,9 +67,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
+Plugin 'spf13/PIV'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
-Plugin 'spf13/PIV'
 
 
 " " The following are examples of different formats supported.
