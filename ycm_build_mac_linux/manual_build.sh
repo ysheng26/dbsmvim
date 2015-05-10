@@ -39,7 +39,7 @@ function python_finder {
 }
 
 ycm_dir="~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp"
-llvm_root="~/libs/clang+llvm-3.3"
+llvm_root="~/Dropbox/shengy_not_regular/clang+llvm-3.3"
 
 cmake -G "Unix Makefiles" $(python_finder) -DPATH_TO_LLVM_ROOT=$llvm_root . $ycm_dir
 make -j $(num_cores) ycm_support_libs
