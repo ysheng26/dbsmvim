@@ -68,6 +68,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'spf13/PIV'
+Plugin 'chrisbra/csv.vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
