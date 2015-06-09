@@ -4,3 +4,4 @@ ycm_build_mac_linux
 *.pyc
 eclim
 plugin
+undo/*
