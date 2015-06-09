@@ -243,9 +243,9 @@ autocmd FileType ruby,eruby set softtabstop=2
 autocmd FileType ruby,eruby set shiftwidth=2
 
 " web development indentation setup
-autocmd FileType html,css,javascript set tabstop=2
-autocmd FileType html,css,javascript set softtabstop=2
-autocmd FileType html,css,javascript set shiftwidth=2
+autocmd FileType html,xml,css,javascript set tabstop=2
+autocmd FileType html,xml,css,javascript set softtabstop=2
+autocmd FileType html,xml,css,javascript set shiftwidth=2
 
 " Setup vimgrep
 "noremap <silent> <C-F3> :call Search_Word()<CR>:copen<CR>
