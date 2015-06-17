@@ -127,6 +127,7 @@ nnoremap N Nzzzv
 
 " *Focus* the current line.
 nnoremap <c-l> zMzvzz
+
 set background=dark
 " set background=light
 colorscheme gruvbox
