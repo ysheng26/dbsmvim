@@ -121,6 +121,12 @@ nnoremap <leader>q :q<cr>
 vnoremap < <gv
 vnoremap > >gv
 
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" *Focus* the current line.
+nnoremap <c-l> zMzvzz
 set background=dark
 " set background=light
 colorscheme gruvbox
@@ -197,8 +203,8 @@ set noautochdir
 " Don't redraw the screen when executing macros
 set lazyredraw
 
-" enable swap files
-set swapfile
+" disable swap files
+set noswapfile
 
 " enable backup files
 set backup
@@ -313,6 +319,12 @@ nnoremap <F2> :%s/\s\+$//g <CR> :nohlsearch <CR>
 nnoremap <Leader>- :colder<CR>
 nnoremap <Leader>= :cnewer<CR>
 
+" Quicksave sessions
+" Quick write session with F2
+nnoremap <F7> :mksession! ~/.vim_session <CR>
+" And load session with F3
+nnoremap <F8> :source ~/.vim_session <CR>
+
 " CtrlP config
 
 " Set this to 1 to set searching by filename (as opposed to full path) as the
@@ -353,9 +365,6 @@ let g:ctrlp_custom_ignore = {
     \ 'link': '',
     \ }
 
-" Set this to 0 to enable cross-session caching by not deleting the cache files
-" upon exiting Vim: >
-let g:ctrlp_clear_cache_on_exit = 0
 
 inoremap <expr> <C-d> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
 inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
@@ -398,10 +407,9 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --column
     set grepformat=%f:%l:%c%m
 
-    " Ctrl+P plugin
+    " CtrlP plugin
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " ag is fast enough that CtrlP doesn't need to cache
-    " let g:ctrlp_use_caching = 0
+
 endif
 
 " Vim-LaTex setup
