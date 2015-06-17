@@ -358,12 +358,9 @@ let g:ctrlp_max_height = 70
 " In addition to |'wildignore'|, use this for files and directories you want only
 " CtrlP to not show. Use regexp to specify the patterns: >
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.elf$\|\.o$\
-               \|\.obj$\|\.class$\
-               \|\.png$\|\.jpg$\|\.jpeg$\|\.bmp$\
-               \|\.vsd$\|\.vsdx$\|\.doc$\|\.docx$\
-               \|\.xls$\|\.xlsx$',
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|elf|o|obj|class|jar
+    \               |png|jpg|jpeg|bmp|vsd|vsdx|doc|docx|xls|xlsx)$',
     \ 'link': '',
     \ }
 
@@ -409,9 +406,9 @@ if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --column
     set grepformat=%f:%l:%c%m
 
-    " CtrlP plugin
+    " CtrlP with ag
+    " bug: can't ignore files by g:ctrlp_custom_ignore
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
 endif
 
 " Vim-LaTex setup
@@ -474,10 +471,15 @@ let g:rainbow_conf = {
     \   'separately': {
     \       '*': {},
     \       'vim': {
-    \           'parentheses': [['fu\w* \s*.*)','endfu\w*'], ['for','endfor'], ['while', 'endwhile'], ['if','_elseif\|else_','endif'], ['(',')'], ['\[','\]'], ['{','}']],
+    \           'parentheses': [['fu\w* \s*.*)','endfu\w*'],
+    \                           ['for','endfor'],
+    \                           ['while', 'endwhile'],
+    \                           ['if','_elseif\|else_','endif'],
+    \                           ['(',')'], ['\[','\]'], ['{','}']],
     \       },
     \       'tex': {
-    \           'parentheses': [['(',')'], ['\[','\]'], ['\\begin{.*}','\\end{.*}']],
+    \           'parentheses': [['(',')'], ['\[','\]'],
+    \                           ['\\begin{.*}','\\end{.*}']],
     \       },
     \   }
     \}
