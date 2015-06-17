@@ -194,15 +194,40 @@ let g:fencview_autodetect = 0
 cd %:p:h
 set noautochdir
 
-" disable backup and swap files
-set nobackup
-set noswapfile
+" Don't redraw the screen when executing macros
+set lazyredraw
+
+" enable swap files
+set swapfile
+
+" enable backup files
+set backup
 
 " persistant undo
 set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
+
+" several folder locations setup
+set undodir=~/.vim/tmp/undo//     " Undo files
+set backupdir=~/.vim/tmp/backup// " Backups
+set directory=~/.vim/tmp/swap//   " Swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
+" Make sure crontab doesn't explode
+" http://vim.wikia.com/wiki/Editing_crontab
+set backupskip=/tmp/*,/private/tmp/*
+
 " Ignore case sensitive
 set ignorecase
 
@@ -367,6 +392,17 @@ let g:ack_use_dispatch = 1
 
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
+
+if executable('ag')
+    " Note we extract the column as well as the file and line number
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+
+    " Ctrl+P plugin
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    " ag is fast enough that CtrlP doesn't need to cache
+    " let g:ctrlp_use_caching = 0
+endif
 
 " Vim-LaTex setup
 " set shellslash
