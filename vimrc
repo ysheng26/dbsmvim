@@ -324,6 +324,8 @@ nnoremap <Leader>= :cnewer<CR>
 nnoremap <F7> :mksession! ~/.vim_session <CR>
 " And load session with F3
 nnoremap <F8> :source ~/.vim_session <CR>
+" http://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
+set sessionoptions-=options
 
 " CtrlP config
 
