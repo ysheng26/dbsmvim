@@ -126,7 +126,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " *Focus* the current line.
-nnoremap <c-l> zMzvzz
+nnoremap <c-l> zvzz
 
 set background=dark
 " set background=light
