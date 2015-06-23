@@ -461,8 +461,8 @@ let g:syntastic_cpp_checkers = ['gcc', 'cppcheck']
 nnoremap <Leader>` :RainbowToggle<CR>
 let g:rainbow_active = 0
 let g:rainbow_conf = {
-    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \   'ctermfgs': ['darkgray', 'darkblue', 'darkmagenta', 'darkcyan'],
+    \   'guifgs': ['Red', 'Green', 'Yellow', 'Blue', 'Cyan'],
+    \   'ctermfgs': ['Red', 'Green', 'Yellow', 'Blue', 'Cyan'],
     \   'operators': '_,_',
     \   'parentheses': [['(',')'], ['\[','\]'], ['{','}']],
     \   'separately': {
