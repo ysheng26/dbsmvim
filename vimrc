@@ -159,6 +159,9 @@ autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 set colorcolumn=80
 set cmdheight=2
 
+" gruvbox colorscheme setup
+let g:gruvbox_guisp_fallback = 'fg'
+
 " molokai colorscheme setup
 " If you prefer the scheme to match the original monokai background color,
 " put this in your .vimrc file:
