@@ -141,7 +141,7 @@ function! DarkLightToggle()
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme lucius
+        colorscheme solarized
         let g:dark_light_switch = 1
     endif
 endfunction
