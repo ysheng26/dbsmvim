@@ -70,6 +70,7 @@ Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'spf13/PIV'
 Plugin 'chrisbra/csv.vim'
+Plugin 'rizzatti/dash.vim'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
@@ -494,6 +495,10 @@ let g:taboo_tab_format = "%N %f%m "
 " Fuzzyfinder
 nnoremap <Leader>u :FufTag<CR>
 nnoremap <Leader>m :FufFile**\<CR>
+
+" Dash
+nnoremap <Leader>h :Dash<CR>
+nnoremap <Leader>H :Dash!<CR>
 
 " Manage split screens
 nnoremap <Leader>1 :on<CR>
