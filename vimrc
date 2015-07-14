@@ -504,6 +504,7 @@ set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
+nnoremap <Leader>0 :echomsg expand('%:p')<CR>
 
 " To enable YouCompleteMe
 " 1) Comment let g:loaded_youcompleteme = 1
