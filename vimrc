@@ -442,7 +442,7 @@ let g:UltiSnipsExpandTrigger = "<c-k>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-if has("win16") || has("win95") || has("win32") || has("win64")
+if has("win32")
     let g:ycm_global_ycm_extra_conf = 'C:\Program Files\Vim\vimfiles\vimycm\ycm_extra_conf.py'
     let g:ycm_confirm_extra_conf = 0
 else
@@ -526,7 +526,7 @@ let g:neocomplcache_enable_at_startup = 0
 
 
 " Eclim with YouCompleteMe
-" let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Eclim with neocomplcache
 " let g:EclimCompletionMethod = 'omnifunc'
@@ -537,28 +537,24 @@ let g:neocomplcache_enable_at_startup = 0
 " let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
 
 " Eclim java settings
-" autocmd FileType java nnoremap <silent> <buffer> <Leader>i :JavaImport<cr>
-" autocmd FileType java nnoremap <silent> <buffer> <Leader>d :JavaDocSearch -x declarations<cr>
-" autocmd FileType java nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
-" autocmd FileType java nnoremap <silent> <buffer> K :JavaDocPreview<cr>
-" autocmd FileType java setlocal completeopt-=preview
+autocmd FileType java nnoremap <silent> <buffer> <Leader>i :JavaImport<cr>
+autocmd FileType java nnoremap <silent> <buffer> <Leader>d :JavaDocSearch -x declarations<cr>
+autocmd FileType java nnoremap <silent> <buffer> <cr> :JavaSearchContext<cr>
+autocmd FileType java nnoremap <silent> <buffer> K :JavaDocPreview<cr>
+autocmd FileType java setlocal completeopt-=preview
 
 " Eclim python settings
-" autocmd FileType python nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
+autocmd FileType python nnoremap <silent> <buffer> <cr> :PythonSearchContext<cr>
 " autocmd FileType python nnoremap <silent> <buffer> <cr> :DjangoContextOpen<cr>
 
-" guifont for linux
-" set guifont=Monospace\ 13
-" set guifont=Inconsolata:h15
-" set guifont=DejavuSansMono\ 13
-
-" guifont for mac
-" set guifont=Monaco:h18
-" set guifont=Inconsolata:h21
-" set guifont=DejaVu\ Sans\ Mono:h20
-
-" guifont for windows
-" set guifont=Fixedsys:h12
-" set guifont=Consolas:h15
-" set guifont=Inconsolata:h15
-" set guifont=DejaVu\ Sans\ Mono:h13
+" guifont settings
+if has("win32")
+    " guifont for windows
+    set guifont=DejaVu\ Sans\ Mono:h13
+elseif has("macunix")
+    " guifont for mac
+    set guifont=DejaVu\ Sans\ Mono:h20
+elseif has("unix")
+    " guifont for linux
+    set guifont=DejavuSansMono\ 13
+endif
