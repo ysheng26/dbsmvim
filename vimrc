@@ -131,18 +131,18 @@ nnoremap <c-l> zvzz
 
 set background=dark
 " set background=light
-colorscheme solarized
+colorscheme lucius
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme solarized
+        colorscheme lucius
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme solarized
+        colorscheme lucius
         let g:dark_light_switch = 1
     endif
 endfunction
