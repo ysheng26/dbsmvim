@@ -131,18 +131,18 @@ nnoremap <c-l> zvzz
 
 set background=dark
 " set background=light
-colorscheme lucius
+colorscheme gruvbox
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme lucius
+        colorscheme gruvbox
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme lucius
+        colorscheme gruvbox
         let g:dark_light_switch = 1
     endif
 endfunction
@@ -159,9 +159,6 @@ autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 
 set colorcolumn=80
 set cmdheight=2
-
-" gruvbox colorscheme setup
-let g:gruvbox_guisp_fallback = 'fg'
 
 " molokai colorscheme setup
 " If you prefer the scheme to match the original monokai background color,
