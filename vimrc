@@ -143,7 +143,7 @@ function! DarkLightToggle()
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme gruvbox
+        colorscheme lucius
         let g:dark_light_switch = 1
     endif
 endfunction
