@@ -24,8 +24,6 @@ Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
-Plugin 'tomasr/molokai'
-Plugin 'morhetz/gruvbox'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
@@ -132,14 +130,14 @@ nnoremap <c-l> zvzz
 
 set background=dark
 " set background=light
-colorscheme gruvbox
+colorscheme solarized
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme gruvbox
+        colorscheme solarized
         let g:dark_light_switch = 0
     else
         set background=light
