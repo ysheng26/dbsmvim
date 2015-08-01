@@ -24,7 +24,6 @@ Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
-Plugin 'jonathanfilip/vim-lucius'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
@@ -131,44 +130,11 @@ nnoremap <c-l> zvzz
 set background=dark
 colorscheme solarized
 
-nnoremap <F9> :call DarkLightToggle()<cr>
-let g:dark_light_switch = 0
-function! DarkLightToggle()
-    if g:dark_light_switch
-        set background=dark
-        colorscheme solarized
-        let g:dark_light_switch = 0
-    else
-        set background=light
-        colorscheme lucius
-        let g:dark_light_switch = 1
-    endif
-endfunction
-
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
 
-" Alter torte's color
-autocmd ColorScheme torte highlight Pmenu ctermbg=grey guibg=grey
-autocmd ColorScheme torte highlight Pmenu ctermfg=black guifg=black
-autocmd ColorScheme torte highlight PmenuSel ctermbg=red guibg=red
-autocmd ColorScheme torte highlight PmenuSel ctermfg=black guifg=black
-autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
-
 set colorcolumn=80
 set cmdheight=2
-
-" molokai colorscheme setup
-" If you prefer the scheme to match the original monokai background color,
-" put this in your .vimrc file:
-" let g:molokai_original = 1
-let g:rehash256 = 1
-
-" jellybeans colorscheme customize
-let g:jellybeans_overrides = {
-\    'MatchParen': { 'guifg': 'ff0000'},
-\    'Search': { 'guifg': '000000', 'guibg': 'd78700'},
-\}
 
 " Remove menu bar and tool bar
 set guioptions=
