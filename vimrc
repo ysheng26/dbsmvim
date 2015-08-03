@@ -25,6 +25,7 @@ Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jonathanfilip/vim-lucius'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mbbill/fencview'
@@ -132,6 +133,20 @@ colorscheme solarized
 
 " Uncomment when terminals don't have solarized color setup
 " let g:solarized_termcolors=256
+
+nnoremap <F9> :call DarkLightToggle()<cr>
+let g:dark_light_switch = 0
+function! DarkLightToggle()
+    if g:dark_light_switch
+        set background=dark
+        colorscheme solarized
+        let g:dark_light_switch = 0
+    else
+        set background=light
+        colorscheme lucius
+        let g:dark_light_switch = 1
+    endif
+endfunction
 
 set colorcolumn=80
 set cmdheight=2
