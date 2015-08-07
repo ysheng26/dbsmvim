@@ -183,6 +183,9 @@ let g:fencview_autodetect = 0
 cd %:p:h
 set noautochdir
 
+" auto read the file when file is changed
+set autoread
+
 " Don't redraw the screen when executing macros
 set lazyredraw
 
