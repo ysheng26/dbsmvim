@@ -72,6 +72,7 @@ Plugin 'spf13/PIV'
 Plugin 'chrisbra/csv.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'ryanss/vim-hackernews'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 
