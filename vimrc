@@ -535,7 +535,7 @@ if has("win32")
     set guifont=DejaVu\ Sans\ Mono:h13
 elseif has("macunix")
     " guifont for mac
-    set guifont=DejaVu\ Sans\ Mono:h20
+    set guifont=DejaVu\ Sans\ Mono:h18
 elseif has("unix")
     " guifont for linux
     set guifont=DejavuSansMono\ 13
