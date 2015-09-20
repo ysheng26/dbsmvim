@@ -24,7 +24,7 @@ Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
@@ -132,17 +132,17 @@ nnoremap N Nzzzv
 nnoremap <c-l> zvzz
 
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
-" Uncomment when terminals don't have solarized color setup
-" let g:solarized_termcolors=256
+" molokai terminal setup
+let g:rehash256 = 1
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme solarized
+        colorscheme molokai
         let g:dark_light_switch = 0
     else
         set background=light
@@ -357,9 +357,7 @@ inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
 inoremap <expr> <C-f> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-f>"
 inoremap <expr> <C-b> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-b>"
 
-" autocmd for vim-colors-solarized and vim-gitgutter
-" This line should be removed after https://github.com/altercation/vim-colors-solarized/pull/62
-" is merged into vim-colors-solarized's master.
+" autocmd for vim-gitgutter
 highlight clear SignColumn
 autocmd ColorScheme * highlight clear SignColumn
 
