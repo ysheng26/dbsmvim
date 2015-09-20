@@ -24,6 +24,8 @@ Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
+Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-shell'
 Plugin 'tomasr/molokai'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'kien/ctrlp.vim'
@@ -132,7 +134,8 @@ nnoremap N Nzzzv
 nnoremap <c-l> zvzz
 
 set background=dark
-colorscheme molokai
+let base16colorspace=256
+colorscheme base16-default
 
 " molokai terminal setup
 let g:rehash256 = 1
