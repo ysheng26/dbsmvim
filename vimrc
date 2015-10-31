@@ -132,6 +132,11 @@ nnoremap N Nzzzv
 " *Focus* the current line.
 nnoremap <c-l> zvzz
 
+" jellybeans colorscheme customize
+let g:jellybeans_overrides = {
+\    'Search': { 'guifg': '000000', 'guibg': 'd78700'},
+\}
+
 set background=dark
 colorscheme jellybeans
 
