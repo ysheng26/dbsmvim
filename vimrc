@@ -26,6 +26,7 @@ Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
 Plugin 'jonathanfilip/vim-lucius'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'tomasr/molokai'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mbbill/fencview'
@@ -132,15 +133,18 @@ nnoremap N Nzzzv
 " *Focus* the current line.
 nnoremap <c-l> zvzz
 
+" molokai
+let g:rehash256 = 1
+
 set background=dark
-colorscheme jellybeans
+colorscheme molokai
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme jellybeans
+        colorscheme molokai
         let g:dark_light_switch = 0
     else
         set background=light
