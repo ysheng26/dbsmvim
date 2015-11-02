@@ -133,14 +133,14 @@ nnoremap N Nzzzv
 nnoremap <c-l> zvzz
 
 set background=dark
-colorscheme jellybeans
+colorscheme lucius
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme jellybeans
+        colorscheme lucius
         let g:dark_light_switch = 0
     else
         set background=light
