@@ -132,10 +132,6 @@ nnoremap N Nzzzv
 " *Focus* the current line.
 nnoremap <c-l> zvzz
 
-" put left and right to use
-nnoremap <left> <c-b>H
-nnoremap <right> <c-f>L
-
 set background=dark
 colorscheme lucius
 
