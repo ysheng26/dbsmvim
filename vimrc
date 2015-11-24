@@ -25,7 +25,7 @@ Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
 Plugin 'jonathanfilip/vim-lucius'
-Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mbbill/fencview'
@@ -132,19 +132,21 @@ nnoremap N Nzzzv
 " *Focus* the current line.
 nnoremap <c-l> zvzz
 
+" let g:solarized_termcolors=256
+
 set background=dark
-colorscheme lucius
+colorscheme solarized
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme lucius
+        colorscheme solarized
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme lucius
+        colorscheme solarized
         let g:dark_light_switch = 1
     endif
 endfunction
