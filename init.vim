@@ -253,8 +253,9 @@ set shiftround
 set expandtab
 
 " set foldmethod to indent if editing a python file
-autocmd FileType python set foldmethod=indent
-autocmd BufRead * normal zR
+" autocmd FileType python set foldmethod=indent
+" autocmd BufRead * normal zR
+
 " set indents to 4 if editing a python file
 autocmd FileType python set tabstop=4
 autocmd FileType python set softtabstop=4
