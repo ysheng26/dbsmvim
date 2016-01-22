@@ -446,7 +446,6 @@ let g:syntastic_c_checkers = ['gcc', 'cppcheck']
 let g:syntastic_cpp_checkers = ['gcc', 'cppcheck']
 
 " rainbow settings
-nnoremap <Leader>` :RainbowToggle<CR>
 let g:rainbow_active = 0
 let g:rainbow_conf = {
     \   'guifgs': ['Red', 'DarkCyan', 'Magenta', 'Orange'],
@@ -490,6 +489,7 @@ nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
+nnoremap <Leader>9 :RainbowToggle<CR>
 
 " To enable YouCompleteMe
 " 1) Comment let g:loaded_youcompleteme = 1
