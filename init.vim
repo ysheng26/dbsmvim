@@ -131,7 +131,12 @@ nnoremap N Nzzzv
 " *Focus* the current line.
 nnoremap <c-l> zvzz
 
-" let g:solarized_termcolors=256
+" Alter torte's color
+autocmd ColorScheme torte highlight Pmenu ctermbg=grey guibg=grey
+autocmd ColorScheme torte highlight Pmenu ctermfg=black guifg=black
+autocmd ColorScheme torte highlight PmenuSel ctermbg=red guibg=red
+autocmd ColorScheme torte highlight PmenuSel ctermfg=black guifg=black
+autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 
 set background=dark
 colorscheme lucius
