@@ -44,6 +44,7 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'luochen1990/rainbow'
+Plugin 'tpope/vim-tbone'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
@@ -480,7 +481,7 @@ let g:rainbow_conf = {
     \}
 
 " taboo settings
-let g:taboo_tab_format = "%N %f%m "
+let g:taboo_tab_format = " %N:[%f%m] "
 
 " Fuzzyfinder
 nnoremap <Leader>u :FufTag<CR>
