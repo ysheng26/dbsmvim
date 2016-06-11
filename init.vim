@@ -18,22 +18,13 @@ Plugin 'gregsexton/VimCalc'
 Plugin 'vim-scripts/a.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ShengYun/vim-conque'
+" Plugin 'ShengYun/vim-conque'
 Plugin 'ShengYun/vim-cscope-mapping'
 Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Shirk/vim-gas'
-Plugin 'pangloss/vim-javascript'
-Plugin 'NLKNguyen/c-syntax.vim'
-Plugin 'elzr/vim-json'
-Plugin 'fatih/vim-go'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'hdima/python-syntax'
-Plugin 'jvirtanen/vim-octave'
-Plugin 'aklt/plantuml-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mbbill/fencview'
@@ -41,6 +32,19 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Shougo/neocomplcache.vim'
+" TODO: replace ctrlp and replace key bindings
+" TODO: replace ack.vim and use pt
+" TODO: maybe replace dispatch?
+Plugin 'Shougo/unite.vim'
+" TODO: replace nerdtree
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'Shougo/vimproc.vim'
+" TODO: replace vim-conque
+Plugin 'Shougo/vimshell.vim'
+Plugin 'maxbrunsfeld/vim-yankstack'
+Plugin 'Shougo/neoyank.vim'
+Plugin 'Shougo/neomru.vim'
+Plugin 'Shougo/unite-build'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 Plugin 'luochen1990/rainbow'
@@ -58,9 +62,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-capslock'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'toyamarinyon/vim-swift'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'vim-latex/vim-latex'
@@ -76,12 +78,8 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
-Plugin 'spf13/PIV'
 Plugin 'rizzatti/dash.vim'
 Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'jimenezrick/vimerl'
-Plugin 'L9'
-Plugin 'FuzzyFinder'
 
 
 " " The following are examples of different formats supported.
@@ -298,7 +296,7 @@ nnoremap <F12> :A<CR>
 nnoremap <F4> :TagbarToggle<CR>
 
 " Use leader F4 to call Nerdtree
-nnoremap <leader><F4> :NERDTreeToggle<CR>
+" nnoremap <leader><F4> :NERDTreeToggle<CR>
 
 " This is for quickly updating cscope file without using GNU find
 nnoremap <leader><F5> :cs kill -1<CR>
@@ -483,10 +481,6 @@ let g:rainbow_conf = {
 
 " taboo settings
 let g:taboo_tab_format = " %N:[%f%m] "
-
-" Fuzzyfinder
-nnoremap <Leader>u :FufTag<CR>
-nnoremap <Leader>m :FufFile**\<CR>
 
 " Dash
 nnoremap <Leader>h :Dash<CR>
