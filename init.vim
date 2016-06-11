@@ -24,7 +24,7 @@ Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
 Plugin 'ShengYun/vim-eazycolour'
 Plugin 'ShengYun/vim-taghighlight'
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'Shirk/vim-gas'
 Plugin 'pangloss/vim-javascript'
 Plugin 'NLKNguyen/c-syntax.vim'
@@ -146,18 +146,19 @@ autocmd ColorScheme torte highlight PmenuSel ctermfg=black guifg=black
 autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 
 set background=dark
-colorscheme PaperColor
+colorscheme solarized
+" let g:solarized_termcolors=256
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
         set background=dark
-        colorscheme PaperColor
+        colorscheme solarized
         let g:dark_light_switch = 0
     else
         set background=light
-        colorscheme PaperColor
+        colorscheme solarized
         let g:dark_light_switch = 1
     endif
 endfunction
