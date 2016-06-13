@@ -18,7 +18,6 @@ Plugin 'gregsexton/VimCalc'
 Plugin 'vim-scripts/a.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
-" Plugin 'ShengYun/vim-conque'
 Plugin 'ShengYun/vim-cscope-mapping'
 Plugin 'ShengYun/vim-mswin'
 Plugin 'ShengYun/vim-dbs-easycolour'
@@ -32,14 +31,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Shougo/neocomplcache.vim'
-" TODO: replace ctrlp and replace key bindings
-" TODO: replace ack.vim and use pt
-" TODO: maybe replace dispatch?
 Plugin 'Shougo/unite.vim'
-" TODO: replace nerdtree
 Plugin 'Shougo/vimfiler.vim'
 Plugin 'Shougo/vimproc.vim'
-" TODO: replace vim-conque
 Plugin 'Shougo/vimshell.vim'
 Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'Shougo/neoyank.vim'
@@ -122,8 +116,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-nnoremap <leader>w :w<cr>
-nnoremap <leader>q :q<cr>
+nnoremap <Leader>w :w<cr>
+nnoremap <Leader>q :q<cr>
 
 " Better indentation
 vnoremap < <gv
@@ -296,10 +290,10 @@ nnoremap <F12> :A<CR>
 nnoremap <F4> :TagbarToggle<CR>
 
 " Use leader F4 to call Nerdtree
-" nnoremap <leader><F4> :NERDTreeToggle<CR>
+nnoremap <Leader><F4> :NERDTreeToggle<CR>
 
 " This is for quickly updating cscope file without using GNU find
-nnoremap <leader><F5> :cs kill -1<CR>
+nnoremap <Leader><F5> :cs kill -1<CR>
     \:!cscope -bqv<CR>
     \:cs add cscope.out<CR>
     \:cs reset<CR>
@@ -390,12 +384,16 @@ autocmd FileType cpp set commentstring=//\ %s
 
 " Ack setup from Steve Losh
 " In default, Ack will expand the word under cursor if nothing is provided.
-nnoremap <leader>a :Ack!<space>
+nnoremap <Leader>a :Ack!<space>
 let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
 let g:ack_use_dispatch = 1
 
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
+
+" unite.vim setup
+nnoremap <Leader>u :Unite<cr>
+nnoremap <Leader>m :Unite file_mru<cr>
 
 if executable('ag')
     " Note we extract the column as well as the file and line number
@@ -413,7 +411,7 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 
 " jedi-vim setup
-let g:jedi#usages_command = "<leader>s"
+let g:jedi#usages_command = "<Leader>s"
 let g:jedi#use_tabs_not_buffers = 0
 let g:jedi#popup_on_dot = 1
 let g:jedi#show_call_signatures = 0
