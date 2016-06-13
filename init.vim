@@ -182,7 +182,7 @@ set statusline+=\ %P
 set wildmenu
 
 set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:â€º\ ,trail:â€¢,extends:#,nbsp:. " Highlight problematic whitespace
 
 " Setup fencview
 let g:fencview_autodetect = 0
