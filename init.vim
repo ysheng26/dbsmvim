@@ -287,6 +287,14 @@ autocmd FileType html,xml,css,javascript set shiftwidth=2
 "    execute ":noautocmd vimgrep " w "**"
 "endfunction
 
+if executable('pt')
+    nnoremap <F3> :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+    let g:unite_source_grep_command = 'pt'
+    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_grep_encoding = 'utf-8'
+endif
+
 " Set a.vim's shortcut
 nnoremap <F12> :A<CR>
 
@@ -386,11 +394,13 @@ autocmd FileType python set commentstring=#\ %s
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 
-" Ack setup from Steve Losh
-" In default, Ack will expand the word under cursor if nothing is provided.
-nnoremap <Leader>a :Ack!<space>
-let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
-let g:ack_use_dispatch = 1
+if executable('ag')
+    " Ack setup from Steve Losh
+    " In default, Ack will expand the word under cursor if nothing is provided.
+    nnoremap <Leader>a :Ack!<space>
+    let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+    let g:ack_use_dispatch = 1
+endif
 
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
