@@ -72,7 +72,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-scripts/searchfold.vim'
-Plugin 'marijnh/tern_for_vim'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'moll/vim-node'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
@@ -279,6 +282,9 @@ autocmd FileType ruby,eruby set shiftwidth=2
 autocmd FileType html,xml,css,javascript set tabstop=2
 autocmd FileType html,xml,css,javascript set softtabstop=2
 autocmd FileType html,xml,css,javascript set shiftwidth=2
+
+" javascript-libraries-syntax.vim setup
+let g:used_javascript_libs = 'jquery,angularjs'
 
 " Setup vimgrep
 "noremap <silent> <C-F3> :call Search_Word()<CR>:copen<CR>
