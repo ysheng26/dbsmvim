@@ -415,6 +415,10 @@ nnoremap <Leader>r :Ggrep <C-R><C-W>
 nnoremap <Leader>u :Unite<cr>
 nnoremap <Leader>m :Unite file_mru<cr>
 
+if has( 'win32' )
+    let g:unite_source_rec_async_command = [expand('$ProgramFiles/Git/usr/bin/find.exe'), '-L']
+endif
+
 if executable('ag')
     " Note we extract the column as well as the file and line number
     set grepprg=ag\ --nogroup\ --nocolor\ --column
