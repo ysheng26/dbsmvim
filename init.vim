@@ -422,7 +422,11 @@ if executable('ag')
 
     " CtrlP with ag
     " bug: can't ignore files by g:ctrlp_custom_ignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    if has( 'unix' )
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    elseif has( 'win32' )
+        let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+    endif
 endif
 
 " Vim-LaTex setup
