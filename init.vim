@@ -2,15 +2,19 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32")
+    set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
+    let path='$VIM/vimfiles/bundle'
+    call vundle#begin(path)
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " runtime path settings on windows
-" set rtp+=~/vimfiles/bundle/Vundle.vim/
-" let path='~/vimfiles/bundle'
-" call vundle#begin(path)
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -178,7 +182,7 @@ set statusline+=\ %P
 set wildmenu
 
 set list
-set listchars=tab:â€º\ ,trail:â€¢,extends:#,nbsp:. " Highlight problematic whitespace
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
 " Setup fencview
 let g:fencview_autodetect = 0
