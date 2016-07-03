@@ -478,6 +478,10 @@ nmap <Leader>o <Plug>yankstack_substitute_newer_paste
 nnoremap <F11> :Yanks<CR>
 
 " Syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['python', 'pep8']
 let g:syntastic_c_checkers = ['gcc', 'cppcheck']
 let g:syntastic_cpp_checkers = ['gcc', 'cppcheck']
