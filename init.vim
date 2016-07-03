@@ -526,6 +526,7 @@ nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
+nnoremap <Leader>8 :SyntasticToggleMode<CR>
 nnoremap <Leader>9 :RainbowToggle<CR>
 
 " To enable YouCompleteMe
