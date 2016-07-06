@@ -529,6 +529,9 @@ nnoremap <Leader>0 :echomsg expand('%:p')<CR>
 nnoremap <Leader>8 :SyntasticToggleMode<CR>
 nnoremap <Leader>9 :RainbowToggle<CR>
 
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 " To enable YouCompleteMe
 " 1) Comment let g:loaded_youcompleteme = 1
 " 2) Uncomment let g:jedi#completions_enabled = 0
