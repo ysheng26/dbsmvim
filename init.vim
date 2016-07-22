@@ -473,6 +473,9 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 
 let g:ycm_seed_identifiers_with_syntax = 1
 
+" Disable youcompleteme diagnostic ui
+let g:ycm_show_diagnostics_ui = 0
+
 " YankStack Settings
 let g:yankstack_map_keys = 0
 nmap <Leader>p <Plug>yankstack_substitute_older_paste
