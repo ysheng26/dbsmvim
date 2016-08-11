@@ -84,6 +84,7 @@ Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'mbbill/undotree'
 
 
 " " The following are examples of different formats supported.
@@ -414,8 +415,10 @@ endif
 nnoremap <Leader>r :Ggrep <C-R><C-W>
 
 " unite.vim setup
-nnoremap <Leader>u :Unite<cr>
 nnoremap <Leader>m :Unite file_mru<cr>
+
+" undotree
+nnoremap <Leader>u :UndotreeToggle<cr>
 
 if has( 'win32' )
     let g:unite_source_rec_async_command = [expand('$ProgramFiles/Git/usr/bin/find.exe'), '-L']
