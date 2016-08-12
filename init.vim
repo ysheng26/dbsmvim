@@ -34,6 +34,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'mbbill/fencview'
+Plugin 'mbbill/undotree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/matchit.zip'
@@ -84,7 +85,6 @@ Plugin 'othree/html5.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'mbbill/undotree'
 
 
 " " The following are examples of different formats supported.
