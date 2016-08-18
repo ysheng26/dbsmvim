@@ -5,118 +5,82 @@ filetype off                  " required
 if has("win32")
     set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
     let path='$VIM/vimfiles/bundle'
-    call vundle#begin(path)
+    call plug#begin(path)
 else
     set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+    call plug#begin()
 endif
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+Plug 'gregsexton/VimCalc'
+Plug 'vim-scripts/a.vim'
+Plug 'mileszs/ack.vim'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'ShengYun/vim-cscope-mapping'
+Plug 'ShengYun/vim-mswin'
+Plug 'ShengYun/vim-dbs-easycolour'
+Plug 'ShengYun/vim-eazycolour'
+Plug 'ShengYun/vim-taghighlight'
+Plug 'ShengYun/vim-gnu-global'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'mbbill/fencview'
+Plug 'mbbill/undotree'
+Plug 'airblade/vim-gitgutter'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'Shougo/neocomplcache.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimshell.vim'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'Shougo/neoyank.vim'
+Plug 'Shougo/neomru.vim'
+Plug 'Shougo/unite-build'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'luochen1990/rainbow'
+Plug 'tpope/vim-tbone'
+Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-capslock'
+Plug 'vim-ruby/vim-ruby'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-latex/vim-latex'
+Plug 'scrooloose/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/searchfold.vim'
+Plug 'ternjs/tern_for_vim'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'moll/vim-node'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'gcmt/taboo.vim'
+Plug 'rizzatti/dash.vim'
+Plug 'michaeljsmith/vim-indent-object'
 
-" runtime path settings on windows
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'gregsexton/VimCalc'
-Plugin 'vim-scripts/a.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'ShengYun/vim-cscope-mapping'
-Plugin 'ShengYun/vim-mswin'
-Plugin 'ShengYun/vim-dbs-easycolour'
-Plugin 'ShengYun/vim-eazycolour'
-Plugin 'ShengYun/vim-taghighlight'
-Plugin 'ShengYun/vim-gnu-global'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'mbbill/fencview'
-Plugin 'mbbill/undotree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'Shougo/neocomplcache.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'maxbrunsfeld/vim-yankstack'
-Plugin 'Shougo/neoyank.vim'
-Plugin 'Shougo/neomru.vim'
-Plugin 'Shougo/unite-build'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'luochen1990/rainbow'
-Plugin 'tpope/vim-tbone'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-jdaddy'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-capslock'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'vim-latex/vim-latex'
-Plugin 'scrooloose/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-scripts/searchfold.vim'
-Plugin 'ternjs/tern_for_vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'moll/vim-node'
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
-Plugin 'gcmt/taboo.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'michaeljsmith/vim-indent-object'
-
-
-" " The following are examples of different formats supported.
-" " Keep Plugin commands between vundle#begin/end.
-" " plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" " plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" " Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" " git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" " The sparkup vim script is in a subdirectory of this repo called vim.
-" " Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" " Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
+filetype plugin indent on
 
 " Below is customized settings
 let mapleader = ","

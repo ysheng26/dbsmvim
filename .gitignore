@@ -1,4 +1,4 @@
-bundle/*
+plugged/*
 ycm_build_mac_linux
 !ycm_build_mac_linux/manual_build.sh
 *.pyc
