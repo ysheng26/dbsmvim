@@ -11,39 +11,21 @@ else
     call plug#begin()
 endif
 
-Plug 'gregsexton/VimCalc'
-Plug 'vim-scripts/a.vim'
-Plug 'mileszs/ack.vim'
+Plug 'gcmt/taboo.vim'
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'ShengYun/vim-cscope-mapping'
 Plug 'ShengYun/vim-mswin'
-Plug 'ShengYun/vim-dbs-easycolour'
-Plug 'ShengYun/vim-eazycolour'
-Plug 'ShengYun/vim-taghighlight'
 Plug 'ShengYun/vim-gnu-global'
-Plug 'jonathanfilip/vim-lucius'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'altercation/vim-colors-solarized'
-Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'mbbill/fencview'
-Plug 'mbbill/undotree'
 Plug 'airblade/vim-gitgutter'
-Plug 'davidhalter/jedi-vim'
-Plug 'vim-scripts/matchit.zip'
 Plug 'Shougo/neocomplcache.vim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
 Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/vimshell.vim'
-Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'Shougo/neoyank.vim'
 Plug 'Shougo/neomru.vim'
-Plug 'Shougo/unite-build'
+Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/nerdtree'
-Plug 'luochen1990/rainbow'
-Plug 'tpope/vim-tbone'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -52,32 +34,53 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-capslock'
-Plug 'vim-ruby/vim-ruby'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'vim-latex/vim-latex'
 Plug 'scrooloose/syntastic'
-Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/searchfold.vim'
-Plug 'ternjs/tern_for_vim'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'moll/vim-node'
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'gcmt/taboo.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'michaeljsmith/vim-indent-object'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+
+Plug 'gregsexton/VimCalc', {'on': 'Calc'}
+Plug 'vim-scripts/a.vim', {'on': 'A'}
+Plug 'mileszs/ack.vim', {'on': 'Ack'}
+Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
+Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+Plug 'Shougo/unite.vim', {'on': 'Unite'}
+Plug 'luochen1990/rainbow', {'on': 'RainbowToggle'}
+Plug 'godlygeek/tabular', {'on': 'Tabularize'}
+
+Plug 'tpope/vim-jdaddy', {'for': 'json'}
+
+Plug 'ternjs/tern_for_vim', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
+Plug 'moll/vim-node', {'for': 'javascript'}
+
+Plug 'mattn/emmet-vim', {'for': 'html'}
+Plug 'othree/html5.vim', {'for': 'html'}
+Plug 'vim-scripts/matchit.zip', {'for': 'html'}
+
+Plug 'vim-latex/vim-latex', {'for': 'tex'}
+
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+
+" Plug 'rizzatti/dash.vim'
+" Plug 'ShengYun/vim-dbs-easycolour'
+" Plug 'ShengYun/vim-eazycolour'
+" Plug 'ShengYun/vim-taghighlight'
+" Plug 'jonathanfilip/vim-lucius'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'tpope/vim-rails'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'tpope/vim-tbone'
 
 call plug#end()
 filetype plugin indent on
