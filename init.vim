@@ -43,11 +43,11 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
 
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
 Plug 'mileszs/ack.vim', {'on': 'Ack'}
-Plug 'kien/ctrlp.vim', {'on': 'CtrlP'}
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Shougo/unite.vim', {'on': 'Unite'}
