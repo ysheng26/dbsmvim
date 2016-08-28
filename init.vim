@@ -39,7 +39,7 @@ Plug 'tpope/vim-capslock'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
@@ -453,14 +453,8 @@ nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>o <Plug>yankstack_substitute_newer_paste
 nnoremap <F11> :Yanks<CR>
 
-" Syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_checkers = ['python', 'pep8']
-let g:syntastic_c_checkers = ['gcc', 'cppcheck']
-let g:syntastic_cpp_checkers = ['gcc', 'cppcheck']
+" neomake settings
+autocmd! BufWritePost * Neomake
 
 " rainbow settings
 let g:rainbow_active = 0
@@ -502,7 +496,6 @@ nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
-nnoremap <Leader>8 :SyntasticToggleMode<CR>
 nnoremap <Leader>9 :RainbowToggle<CR>
 
 " YouCompleteMe settings
