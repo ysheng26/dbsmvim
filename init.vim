@@ -90,6 +90,7 @@ filetype plugin indent on
 
 " Below is customized settings
 let mapleader = ","
+let maplocalleader = "\\"
 inoremap jk <Esc>
 nnoremap j gj
 nnoremap k gk
