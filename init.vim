@@ -53,7 +53,9 @@ Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Shougo/unite.vim', {'on': 'Unite'}
 Plug 'luochen1990/rainbow', {'on': 'RainbowToggle'}
-Plug 'godlygeek/tabular', {'on': 'Tabularize'}
+Plug 'junegunn/vim-easy-align', {'on': 'LiveEasyAlign'}
+Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
+Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 
 Plug 'tpope/vim-jdaddy', {'for': 'json'}
 
@@ -496,6 +498,7 @@ nnoremap <Leader>x <C-W>\|<C-W>_
 
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
+nnoremap <Leader>8 :Limelight!!<CR>
 nnoremap <Leader>9 :RainbowToggle<CR>
 
 " YouCompleteMe settings
