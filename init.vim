@@ -44,6 +44,7 @@ Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
@@ -482,9 +483,8 @@ let g:rainbow_conf = {
 " taboo settings
 let g:taboo_tab_format = " %N:[%f%m] "
 
-" Dash
-nnoremap <Leader>h :Dash<CR>
-nnoremap <Leader>H :Dash!<CR>
+" EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Manage split screens
 nnoremap <Leader>1 :on<CR>
