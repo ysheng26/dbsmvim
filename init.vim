@@ -497,6 +497,17 @@ set splitbelow
 set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
 
+" Neovim specific split screen management
+tnoremap <Esc> <C-\><C-n>
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
 " <Leader>0 to <Leader>9 is reserved for other usages:)
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
 nnoremap <Leader>8 :Limelight!!<CR>
