@@ -1,13 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
 if has("win32")
-    set rtp+=$VIM/vimfiles/bundle/Vundle.vim/
-    let path='$VIM/vimfiles/bundle'
+    let path='$VIM/vimfiles/plugged'
     call plug#begin(path)
 else
-    set rtp+=~/.vim/bundle/Vundle.vim
     call plug#begin()
 endif
 
