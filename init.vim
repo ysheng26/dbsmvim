@@ -204,7 +204,7 @@ endif
 set backupskip=/tmp/*,/private/tmp/*
 
 " case sensitive settings
-set smartcase
+set ignorecase
 
 " Set highlight search result
 set hlsearch
