@@ -203,8 +203,8 @@ endif
 " http://vim.wikia.com/wiki/Editing_crontab
 set backupskip=/tmp/*,/private/tmp/*
 
-" Ignore case sensitive
-set ignorecase
+" case sensitive settings
+set smartcase
 
 " Set highlight search result
 set hlsearch
