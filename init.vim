@@ -62,6 +62,9 @@ Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'othree/javascript-libraries-syntax.vim', {'for': 'javascript'}
 Plug 'moll/vim-node', {'for': 'javascript'}
 
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
+Plug 'Quramy/tsuquyomi', {'for': 'typescript'}
+
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'othree/html5.vim', {'for': 'html'}
 Plug 'vim-scripts/matchit.zip', {'for': 'html'}
