@@ -492,8 +492,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " Manage split screens
 nnoremap <Leader>1 :only<CR>
-nnoremap <Leader>2 :split<CR>
-nnoremap <Leader>3 :vsplit<CR>
 set winminheight=0
 set winminwidth=0
 set splitbelow
