@@ -137,7 +137,7 @@ function! DarkLightToggle()
     endif
 endfunction
 
-set colorcolumn=79
+set colorcolumn=80
 set cmdheight=2
 
 " Remove menu bar and tool bar
