@@ -503,10 +503,6 @@ nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
-nnoremap <C-w>h <nop>
-nnoremap <C-w>j <nop>
-nnoremap <C-w>k <nop>
-nnoremap <C-w>l <nop>
 
 " Neovim specific split screen management
 tnoremap <Esc> <C-\><C-n>
