@@ -499,10 +499,10 @@ set winminwidth=0
 set splitbelow
 set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
-nnoremap <Leader>h <C-w>h
-nnoremap <Leader>j <C-w>j
-nnoremap <Leader>k <C-w>k
-nnoremap <Leader>l <C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 nnoremap <C-w>h <nop>
 nnoremap <C-w>j <nop>
 nnoremap <C-w>k <nop>
@@ -510,10 +510,10 @@ nnoremap <C-w>l <nop>
 
 " Neovim specific split screen management
 tnoremap <Esc> <C-\><C-n>
-tnoremap <Leader>h <C-\><C-n><C-w>h
-tnoremap <Leader>j <C-\><C-n><C-w>j
-tnoremap <Leader>k <C-\><C-n><C-w>k
-tnoremap <Leader>l <C-\><C-n><C-w>l
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
 
 " <Leader>4, <Leader>5, <Leader>6, <Leader>7 are still available
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
