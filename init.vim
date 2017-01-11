@@ -74,8 +74,8 @@ Plug 'vim-latex/vim-latex', {'for': 'tex'}
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 " Plug 'rizzatti/dash.vim'
 " Plug 'ShengYun/vim-dbs-easycolour'
 " Plug 'ShengYun/vim-eazycolour'
