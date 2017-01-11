@@ -122,6 +122,7 @@ autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 
 set background=dark
 colorscheme PaperColor
+let g:airline_theme='papercolor'
 
 nnoremap <F9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
