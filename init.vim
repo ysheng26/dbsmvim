@@ -46,7 +46,8 @@ Plug 'iamcco/markdown-preview.vim'
 
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
-Plug 'mileszs/ack.vim', {'on': 'Ack'}
+" Plug 'mileszs/ack.vim', {'on': 'Ack'}
+Plug 'mhinz/vim-grepper', {'on': 'Grepper'}
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Shougo/unite.vim', {'on': 'Unite'}
@@ -376,13 +377,15 @@ autocmd FileType python set commentstring=#\ %s
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 
-if executable('ag')
-    " Ack setup from Steve Losh
-    " In default, Ack will expand the word under cursor if nothing is provided.
-    nnoremap <Leader>a :Ack!<space>
-    let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
-    let g:ack_use_dispatch = 1
-endif
+" if executable('ag')
+"     " Ack setup from Steve Losh
+"     " In default, Ack will expand the word under cursor if nothing is provided.
+"     nnoremap <Leader>a :Ack!<space>
+"     let g:ackprg = 'ag --smart-case --nogroup --nocolor --column'
+"     let g:ack_use_dispatch = 1
+" endif
+
+nnoremap <Leader>a :Grepper<space>
 
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
