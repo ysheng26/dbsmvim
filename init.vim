@@ -111,7 +111,7 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " *Focus* the current line.
-nnoremap <C-m> zvzz
+nnoremap <C-l> zvzz
 
 " Alter torte's color
 autocmd ColorScheme torte highlight Pmenu ctermbg=grey guibg=grey
@@ -498,10 +498,11 @@ set splitbelow
 set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" I really want to use alt instead of control here
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " <Leader>4, <Leader>5, <Leader>6, <Leader>7 are still available
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
