@@ -45,6 +45,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'mhinz/vim-grepper'
 
+Plug 'junegunn/fzf', {'do': './install --all'}
+Plug 'junegunn/fzf.vim'
+
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
