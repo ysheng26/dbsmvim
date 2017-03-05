@@ -391,9 +391,6 @@ nnoremap <Leader>r :Ggrep <C-R><C-W>
 nnoremap <Leader>u :Unite<cr>
 nnoremap <Leader>m :Unite file_mru<cr>
 
-" fzf.vim setup
-nnoremap <Leader>v :Files<cr>
-
 " undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
