@@ -71,6 +71,7 @@ Plug 'vim-latex/vim-latex', {'for': 'tex'}
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
+Plug 'dawikur/algorithm-mnemonics.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
