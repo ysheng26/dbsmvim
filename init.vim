@@ -18,9 +18,6 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'Raimondi/delimitMate'
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/neocomplcache.vim'
-Plug 'Shougo/vimproc.vim'
-Plug 'Shougo/neoyank.vim'
-Plug 'Shougo/neomru.vim'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-rsi'
@@ -36,7 +33,7 @@ Plug 'tpope/vim-capslock'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'neomake/neomake'
+Plug 'vim-syntastic/syntastic'
 Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
@@ -51,7 +48,6 @@ Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
-Plug 'Shougo/unite.vim', {'on': 'Unite'}
 Plug 'luochen1990/rainbow', {'on': 'RainbowToggle'}
 Plug 'junegunn/vim-easy-align', {'on': 'LiveEasyAlign'}
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
@@ -88,6 +84,11 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 " Plug 'tpope/vim-rails'
 " Plug 'vim-ruby/vim-ruby'
 " Plug 'tpope/vim-tbone'
+"
+" Plug 'Shougo/vimproc.vim'
+" Plug 'Shougo/neoyank.vim'
+" Plug 'Shougo/neomru.vim'
+" Plug 'Shougo/unite.vim', {'on': 'Unite'}
 
 call plug#end()
 filetype plugin indent on
@@ -272,14 +273,6 @@ let g:used_javascript_libs = 'jquery,angularjs'
 "    execute ":noautocmd vimgrep " w "**"
 "endfunction
 
-if executable('pt')
-    nnoremap <F3> :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-    let g:unite_source_grep_command = 'pt'
-    let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-    let g:unite_source_grep_recursive_opt = ''
-    let g:unite_source_grep_encoding = 'utf-8'
-endif
-
 " Set a.vim's shortcut
 nnoremap <F12> :A<CR>
 
@@ -396,10 +389,6 @@ nnoremap <Leader>m :BufExplorer<cr>
 " undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
-if has( 'win32' )
-    let g:unite_source_rec_async_command = [expand('$ProgramFiles/Git/usr/bin/find.exe'), '-L']
-endif
-
 if executable('ag')
     " Note we extract the column as well as the file and line number
     set grepprg=ag\ --nogroup\ --nocolor\ --column
@@ -461,8 +450,14 @@ nmap <Leader>p <Plug>yankstack_substitute_older_paste
 nmap <Leader>o <Plug>yankstack_substitute_newer_paste
 nnoremap <F11> :Yanks<CR>
 
-" neomake settings
-autocmd! BufWritePost * Neomake
+" Syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['python', 'pep8']
+let g:syntastic_c_checkers = ['gcc', 'cppcheck']
+let g:syntastic_cpp_checkers = ['gcc', 'cppcheck']
 
 " rainbow settings
 let g:rainbow_active = 0
@@ -509,8 +504,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" <Leader>4, <Leader>5, <Leader>6, <Leader>7 are still available
+" <Leader>4, <Leader>5, <Leader>6 are still available
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
+nnoremap <Leader>7 :SyntasticToggleMode<CR>
 nnoremap <Leader>8 :Limelight!!<CR>
 nnoremap <Leader>9 :RainbowToggle<CR>
 
