@@ -41,8 +41,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'mhinz/vim-grepper'
 
-Plug 'junegunn/fzf', {'do': './install --all'}
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'kien/ctrlp.vim'
 
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
 Plug 'vim-scripts/a.vim', {'on': 'A'}
@@ -75,7 +76,6 @@ Plug 'dawikur/algorithm-mnemonics.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
-" Plug 'kien/ctrlp.vim'
 " Plug 'rizzatti/dash.vim'
 " Plug 'ShengYun/vim-dbs-easycolour'
 " Plug 'ShengYun/vim-eazycolour'
@@ -307,43 +307,42 @@ nnoremap <F8> :source ~/.vim_session <CR>
 " http://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
 set sessionoptions-=options
 
-" " CtrlP config
+" CtrlP config
 
-" " Set this to 1 to set searching by filename (as opposed to full path) as the
-" " default: >
-" let g:ctrlp_by_filename = 1
+" Set this to 1 to set searching by filename (as opposed to full path) as the
+" default: >
+let g:ctrlp_by_filename = 1
 
-" " Set this to 1 to set regexp search as the default: >
-" let g:ctrlp_regexp = 1
+" Set this to 1 to set regexp search as the default: >
+let g:ctrlp_regexp = 1
 
-" " 1 - the parent directory of the current file.
-" " 2 - the nearest ancestor that contains one of these directories or files:
-" "     .git/ .hg/ .svn/ .bzr/ _darcs/
-" " 0 - don't manage working directory.
-" let g:ctrlp_working_path_mode = 0
+" 1 - the parent directory of the current file.
+" 2 - the nearest ancestor that contains one of these directories or files:
+"     .git/ .hg/ .svn/ .bzr/ _darcs/
+" 0 - don't manage working directory.
+let g:ctrlp_working_path_mode = 0
 
-" " Set this to 1 to enable the lazy-update feature: only update the match window
-" " after typing been stopped for a certain amount of time: >
-" "
-" " If is 1, update after 250ms. If bigger than 1, the number will be used as the
-" " delay time in milliseconds.
-" let g:ctrlp_lazy_update = 1
+" Set this to 1 to enable the lazy-update feature: only update the match window
+" after typing been stopped for a certain amount of time: >
+"
+" If is 1, update after 250ms. If bigger than 1, the number will be used as the
+" delay time in milliseconds.
+let g:ctrlp_lazy_update = 1
 
-" " The maximum number of files to scan, set to 0 for no limit: >
-" let g:ctrlp_max_files = 0
+" The maximum number of files to scan, set to 0 for no limit: >
+let g:ctrlp_max_files = 0
 
-" " Set the maximum height of the match window: >
-" let g:ctrlp_max_height = 70
+" Set the maximum height of the match window: >
+let g:ctrlp_max_height = 70
 
-" " In addition to |'wildignore'|, use this for files and directories you want only
-" " CtrlP to not show. Use regexp to specify the patterns: >
-" let g:ctrlp_custom_ignore = {
-"     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-"     \ 'file': '\v\.(exe|so|dll|elf|o|obj|class|jar
-"     \               |png|jpg|jpeg|bmp|vsd|vsdx|doc|docx|xls|xlsx)$',
-"     \ 'link': '',
-"     \ }
-
+" In addition to |'wildignore'|, use this for files and directories you want only
+" CtrlP to not show. Use regexp to specify the patterns: >
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|elf|o|obj|class|jar
+    \               |png|jpg|jpeg|bmp|vsd|vsdx|doc|docx|xls|xlsx)$',
+    \ 'link': '',
+    \ }
 
 inoremap <expr> <C-d> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
 inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
@@ -378,8 +377,11 @@ xmap gs <plug>(GrepperOperator)
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
 
-" fzf setup
-nnoremap <C-p> :Files<cr>
+if executable("fzf")
+    let g:loaded_ctrlp = 1
+    nnoremap <c-p> :FZF!<cr>
+    let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
+endif
 
 " buffer explorer setup
 nnoremap <Leader>m :BufExplorer<cr>
@@ -387,18 +389,18 @@ nnoremap <Leader>m :BufExplorer<cr>
 " undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
-if executable('ag')
+if executable("ag")
     " Note we extract the column as well as the file and line number
     set grepprg=ag\ --nogroup\ --nocolor\ --column
     set grepformat=%f:%l:%c%m
 
-    " " CtrlP with ag
-    " " bug: can't ignore files by g:ctrlp_custom_ignore
-    " if has( 'unix' )
-    "     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-    " elseif has( 'win32' )
-    "     let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
-    " endif
+    " CtrlP with ag
+    " bug: can't ignore files by g:ctrlp_custom_ignore
+    if has( 'unix' )
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    elseif has( 'win32' )
+        let g:ctrlp_user_command = 'ag -l --nocolor -g "" %s'
+    endif
 endif
 
 " Vim-LaTex setup
