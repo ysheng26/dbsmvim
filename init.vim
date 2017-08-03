@@ -497,6 +497,10 @@ set winminwidth=0
 set splitbelow
 set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " <Leader>4, <Leader>5, <Leader>6 are still available
 nnoremap <Leader>0 :echomsg expand('%:p')<CR>
