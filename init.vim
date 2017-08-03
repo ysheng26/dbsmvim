@@ -41,8 +41,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'mhinz/vim-grepper'
 
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf'
+" Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 
 Plug 'gregsexton/VimCalc', {'on': 'Calc'}
@@ -377,11 +377,11 @@ xmap gs <plug>(GrepperOperator)
 " fugitive Ggrep
 nnoremap <Leader>r :Ggrep <C-R><C-W>
 
-if executable("fzf")
-    let g:loaded_ctrlp = 1
-    nnoremap <c-p> :FZF!<cr>
-    let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
-endif
+" if executable("fzf")
+"     let g:loaded_ctrlp = 1
+"     nnoremap <c-p> :FZF!<cr>
+"     let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
+" endif
 
 " buffer explorer setup
 nnoremap <Leader>m :BufExplorer<cr>
