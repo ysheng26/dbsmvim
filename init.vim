@@ -40,6 +40,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'mhinz/vim-grepper'
+Plug 'fatih/vim-go'
 
 " Plug 'junegunn/fzf'
 " Plug 'junegunn/fzf.vim'
