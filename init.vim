@@ -40,7 +40,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'mhinz/vim-grepper'
-Plug 'fatih/vim-go'
 
 " Plug 'junegunn/fzf'
 " Plug 'junegunn/fzf.vim'
@@ -72,6 +71,8 @@ Plug 'vim-scripts/matchit.zip', {'for': 'html'}
 Plug 'vim-latex/vim-latex', {'for': 'tex'}
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
+Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'dawikur/algorithm-mnemonics.vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
