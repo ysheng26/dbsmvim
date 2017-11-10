@@ -124,6 +124,7 @@ autocmd ColorScheme torte highlight PmenuSel ctermbg=red guibg=red
 autocmd ColorScheme torte highlight PmenuSel ctermfg=black guifg=black
 autocmd ColorScheme torte highlight ModeMsg ctermfg=yellow guifg=yellow
 
+set t_Co=256
 set background=dark
 colorscheme PaperColor
 let g:airline_theme='papercolor'
