@@ -249,6 +249,13 @@ set expandtab
 " autocmd FileType python set foldmethod=indent
 " autocmd BufRead * normal zR
 
+" Go lang bindings
+autocmd FileType go nnoremap <leader>r :GoRun<cr>
+autocmd FileType go nnoremap <leader>b :GoBuild<cr>
+autocmd FileType go nnoremap <leader>t :GoTest<cr>
+autocmd FileType go nnoremap <leader>f :GoTestFunc<cr>
+autocmd FileType go nnoremap <leader>l :GoAlternate<cr>
+
 " set indents to 4 if editing a python file
 autocmd FileType python set tabstop=4
 autocmd FileType python set softtabstop=4
