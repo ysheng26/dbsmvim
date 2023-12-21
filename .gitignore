@@ -5,3 +5,4 @@ ycm_build_mac_linux
 eclim
 plugin
 tmp/*
+.netrwhist
