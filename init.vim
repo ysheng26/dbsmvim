@@ -34,6 +34,11 @@ Plug 'tpope/vim-jdaddy', {'for': 'json'}
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 call plug#end()
 filetype plugin indent on
 
@@ -211,10 +216,40 @@ autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 
 
+" vim-lsp
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> <leader>d <plug>(lsp-definition)
+    nmap <buffer> <leader>s <plug>(lsp-references)
+    nmap <buffer> <leader>o <plug>(lsp-document-symbol-search)
+    nmap <buffer> <leader>O <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <leader>i <plug>(lsp-implementation)
+    nmap <buffer> <leader>t <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+
+    let g:lsp_format_sync_timeout = 1000
+    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+
+
 " nnoremap <c-p> :FZF!<cr>
 nnoremap <c-p> :FZF<cr>
 let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
-
 
 " buffer explorer setup
 nnoremap <Leader>m :BufExplorer<cr>
