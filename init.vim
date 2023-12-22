@@ -184,8 +184,6 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
-
-
 " Map <c-space> with <c-x><c-o>
 inoremap <c-space> <c-x><c-o>
 
@@ -204,35 +202,30 @@ nnoremap <F8> :source ~/.vim_session <CR>
 " http://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
 set sessionoptions-=options
 
-
-inoremap <expr> <C-d> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-d>"
-inoremap <expr> <C-u> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-u>"
-inoremap <expr> <C-f> pumvisible() ? "\<PageDown>\<C-p>\<C-n>" : "\<C-f>"
-inoremap <expr> <C-b> pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<C-b>"
-
 " setup vim-commentary for special files
 autocmd FileType python set commentstring=#\ %s
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
-
 
 " vim-lsp
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> <leader>d <plug>(lsp-definition)
-    nmap <buffer> <leader>s <plug>(lsp-references)
-    nmap <buffer> <leader>o <plug>(lsp-document-symbol-search)
-    nmap <buffer> <leader>O <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> <leader>i <plug>(lsp-implementation)
-    nmap <buffer> <leader>t <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> <Leader>g <plug>(lsp-definition)
+    nmap <buffer> <Leader>s <plug>(lsp-references)
+    nmap <buffer> <Leader>o <plug>(lsp-document-symbol-search)
+    nmap <buffer> <Leader>O <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <Leader>i <plug>(lsp-implementation)
+    nmap <buffer> <Leader>t <plug>(lsp-type-definition)
+    nmap <buffer> <Leader>rn <plug>(lsp-rename)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    nnoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    nnoremap <buffer> <expr><c-d> lsp#scroll(-4)
+    nnoremap <buffer> <expr><c-j> lsp#scroll(+1)
+    nnoremap <buffer> <expr><c-k> lsp#scroll(-1)
+    inoremap <buffer> <expr><c-j> lsp#scroll(+1)
+    inoremap <buffer> <expr><c-k> lsp#scroll(-1)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -253,6 +246,9 @@ let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
 
 " buffer explorer setup
 nnoremap <Leader>m :BufExplorer<cr>
+
+" ripgrep with fzf
+nnoremap <Leader>a :Rg <c-r><c-w><cr>
 
 " Manage split screens
 nnoremap <Leader>1 :only<CR>
