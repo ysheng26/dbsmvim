@@ -91,7 +91,8 @@ set guioptions=
 " Always show statusline
 set laststatus=2
 
-" show fencview and fugitive in statusline
+
+" show fencview and fugitive in normal statusline
 set statusline=[%n]
 set statusline+=%<%f%y%h%m
 set statusline+=[%{&fenc!=''?&fenc:&enc}:%{&ff}]
@@ -101,6 +102,9 @@ set statusline+=\%r%=[%b\ 0x%B]
 set statusline+=\ %l\ of\ %L,%c%V
 set statusline+=\ Page\ %N
 set statusline+=\ %P
+
+" config airline
+let g:airline_symbols_ascii = 1
 
 set wildmenu
 
@@ -259,10 +263,12 @@ set winminwidth=0
 set splitbelow
 set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
+
+" conflicts with lsp scroll popup
+" nnoremap <c-h> <c-w>h
+" nnoremap <c-j> <c-w>j
+" nnoremap <c-k> <c-w>k
+" nnoremap <c-l> <c-w>l
 
 " <Leader>4
 " <Leader>5
