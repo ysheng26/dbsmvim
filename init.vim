@@ -9,6 +9,7 @@ else
 endif
 
 Plug 'jlanzarotta/bufexplorer'
+Plug 'preservim/nerdtree'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
@@ -247,6 +248,9 @@ augroup END
 " nnoremap <c-p> :FZF!<cr>
 nnoremap <c-p> :FZF<cr>
 let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
+
+" nerdtree
+nnoremap <F4> :NERDTreeToggle<cr>
 
 " buffer explorer setup
 nnoremap <Leader>m :BufExplorer<cr>
