@@ -227,10 +227,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    nnoremap <buffer> <expr><c-j> lsp#scroll(+1)
-    nnoremap <buffer> <expr><c-k> lsp#scroll(-1)
-    inoremap <buffer> <expr><c-j> lsp#scroll(+1)
-    inoremap <buffer> <expr><c-k> lsp#scroll(-1)
+    " nnoremap <buffer> <expr><c-j> lsp#scroll(+1)
+    " nnoremap <buffer> <expr><c-k> lsp#scroll(-1)
+    " inoremap <buffer> <expr><c-j> lsp#scroll(+1)
+    " inoremap <buffer> <expr><c-k> lsp#scroll(-1)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -269,10 +269,10 @@ set splitright
 nnoremap <Leader>x <C-W>\|<C-W>_
 
 " conflicts with lsp scroll popup
-" nnoremap <c-h> <c-w>h
-" nnoremap <c-j> <c-w>j
-" nnoremap <c-k> <c-w>k
-" nnoremap <c-l> <c-w>l
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
 
 " <Leader>4
 " <Leader>5
