@@ -191,6 +191,7 @@ set expandtab
 
 " Map <c-space> with <c-x><c-o>
 inoremap <c-space> <c-x><c-o>
+inoremap <c-@> <c-x><c-o>
 
 " Delete spaces after each line
 nnoremap <f2> :%s/\s\+$//g <cr> :nohlsearch <cr>
@@ -224,6 +225,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>i <plug>(lsp-implementation)
     nmap <buffer> <leader>t <plug>(lsp-type-definition)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> <leader>. <plug>(lsp-code-action)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
@@ -250,7 +252,6 @@ let g:lsp_hover_ui = 'preview'
 let g:lsp_semantic_enabled = 1
 
 
-" nnoremap <c-p> :FZF!<cr>
 nnoremap <c-p> :Files<cr>
 let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
 
