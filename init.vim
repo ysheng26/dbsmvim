@@ -46,15 +46,15 @@ filetype plugin indent on
 " Below is customized settings
 let mapleader = ","
 let maplocalleader = "\\"
-inoremap jk <Esc>
+inoremap jk <esc>
 nnoremap j gj
 nnoremap k gk
 nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-nnoremap <Leader>w :w<cr>
-nnoremap <Leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>q :q<cr>
 
 " Better indentation
 vnoremap < <gv
@@ -69,7 +69,7 @@ set background=dark
 colorscheme PaperColor
 let g:airline_theme='papercolor'
 
-nnoremap <F9> :call DarkLightToggle()<cr>
+nnoremap <f9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
 function! DarkLightToggle()
     if g:dark_light_switch
@@ -162,7 +162,7 @@ set ignorecase
 
 " Set highlight search result
 set hlsearch
-nnoremap <Space> :nohlsearch<CR>
+nnoremap <space> :nohlsearch<cr>
 
 " Set search
 set incsearch
@@ -193,17 +193,17 @@ set expandtab
 inoremap <c-space> <c-x><c-o>
 
 " Delete spaces after each line
-nnoremap <F2> :%s/\s\+$//g <CR> :nohlsearch <CR>
+nnoremap <f2> :%s/\s\+$//g <cr> :nohlsearch <cr>
 
-" Map <Leader>- and <Leader>= to :colder and :cnewer
-nnoremap <Leader>- :colder<CR>
-nnoremap <Leader>= :cnewer<CR>
+" Map <leader>- and <leader>= to :colder and :cnewer
+nnoremap <leader>- :colder<cr>
+nnoremap <leader>= :cnewer<cr>
 
 " Quicksave sessions
-" Quick write session with F2
-nnoremap <F7> :mksession! ~/.vim_session <CR>
-" And load session with F3
-nnoremap <F8> :source ~/.vim_session <CR>
+" Quick write session with f7
+nnoremap <f7> :mksession! ~/.vim_session <cr>
+" And load session with f8
+nnoremap <f8> :source ~/.vim_session <cr>
 " http://stackoverflow.com/questions/9281438/syntax-highlighting-doesnt-work-after-restore-a-previous-vim-session
 set sessionoptions-=options
 
@@ -217,13 +217,13 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> <Leader>g <plug>(lsp-definition)
-    nmap <buffer> <Leader>s <plug>(lsp-references)
-    nmap <buffer> <Leader>o <plug>(lsp-document-symbol-search)
-    nmap <buffer> <Leader>O <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> <Leader>i <plug>(lsp-implementation)
-    nmap <buffer> <Leader>t <plug>(lsp-type-definition)
-    nmap <buffer> <Leader>rn <plug>(lsp-rename)
+    nmap <buffer> <leader>g <plug>(lsp-definition)
+    nmap <buffer> <leader>s <plug>(lsp-references)
+    nmap <buffer> <leader>o <plug>(lsp-document-symbol-search)
+    nmap <buffer> <leader>O <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <leader>i <plug>(lsp-implementation)
+    nmap <buffer> <leader>t <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
@@ -245,45 +245,46 @@ augroup lsp_install
 augroup END
 
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_hover_ui = 'preview'
 
 
 " nnoremap <c-p> :FZF!<cr>
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-p> :Files<cr>
 let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
 
 " nerdtree
-nnoremap <F4> :NERDTreeToggle<cr>
+nnoremap <f4> :NERDTreeToggle<cr>
 
 " buffer explorer setup
-nnoremap <Leader>m :BufExplorer<cr>
+nnoremap <leader>m :BufExplorer<cr>
 
 " ripgrep with fzf
-nnoremap <Leader>a :Rg <c-r><c-w><cr>
+nnoremap <leader>a :Rg <c-r><c-w><cr>
 
 " Manage split screens
-nnoremap <Leader>1 :only<CR>
-nnoremap <Leader>2 :split<CR>
-nnoremap <Leader>3 :vsplit<CR>
+nnoremap <leader>1 :only<cr>
+nnoremap <leader>2 :split<cr>
+nnoremap <leader>3 :vsplit<cr>
 set winminheight=0
 set winminwidth=0
 set splitbelow
 set splitright
-nnoremap <Leader>x <C-W>\|<C-W>_
+nnoremap <leader>x <c-w>\|<c-w>_
+nnoremap <leader>k <c-w>z
 
-" conflicts with lsp scroll popup
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-" <Leader>4
-" <Leader>5
-" <Leader>6
-" <Leader>7
-" <Leader>8
-" <Leader>9
+" <leader>4
+" <leader>5
+" <leader>6
+" <leader>7
+" <leader>8
+" <leader>9
 " are still available
-nnoremap <Leader>0 :echomsg expand('%:p')<CR>
+nnoremap <leader>0 :echomsg expand('%:p')<cr>
 
 " guifont settings
 if has("win32")
