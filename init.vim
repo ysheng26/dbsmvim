@@ -227,10 +227,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    " nnoremap <buffer> <expr><c-j> lsp#scroll(+1)
-    " nnoremap <buffer> <expr><c-k> lsp#scroll(-1)
-    " inoremap <buffer> <expr><c-j> lsp#scroll(+1)
-    " inoremap <buffer> <expr><c-k> lsp#scroll(-1)
+    nnoremap <buffer> <expr><c-d> lsp#scroll(+1)
+    nnoremap <buffer> <expr><c-u> lsp#scroll(-1)
+    inoremap <buffer> <expr><c-d> lsp#scroll(+1)
+    inoremap <buffer> <expr><c-u> lsp#scroll(-1)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
@@ -245,7 +245,9 @@ augroup lsp_install
 augroup END
 
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_hover_ui = 'preview'
+let g:lsp_semantic_enabled = 1
 
 
 " nnoremap <c-p> :FZF!<cr>
