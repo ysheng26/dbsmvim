@@ -255,8 +255,6 @@ let g:lsp_semantic_enabled = 1
 nnoremap <c-p> :Files<cr>
 let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
 
-" nerdtree
-nnoremap <f4> :NERDTreeToggle<cr>
 
 " buffer explorer setup
 nnoremap <leader>m :BufExplorer<cr>
@@ -280,7 +278,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-" <leader>4
+nnoremap <leader>4 :NERDTreeToggle<cr>
+
 " <leader>5
 " <leader>6
 " <leader>7
