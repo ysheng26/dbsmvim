@@ -279,8 +279,8 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 nnoremap <leader>4 :NERDTreeToggle<cr>
+nnoremap <leader>5 :NERDTreeFind<cr>
 
-" <leader>5
 " <leader>6
 " <leader>7
 " <leader>8
