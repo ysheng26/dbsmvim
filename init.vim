@@ -28,6 +28,7 @@ Plug 'majutsushi/tagbar'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 
