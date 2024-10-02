@@ -121,6 +121,10 @@ let g:fencview_autodetect = 0
 cd %:p:h
 set noautochdir
 
+" use system clipboard
+" https://stackoverflow.com/questions/30691466/what-is-difference-between-vims-clipboard-unnamed-and-unnamedplus-settings
+set clipboard^=unnamed,unnamedplus
+
 " auto read the file when file is changed
 set autoread
 
