@@ -227,8 +227,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>t <plug>(lsp-type-definition)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> <leader>. <plug>(lsp-code-action)
-    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> [d <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]d <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
     nnoremap <buffer> <expr><c-d> lsp#scroll(+1)
     nnoremap <buffer> <expr><c-u> lsp#scroll(-1)
@@ -247,10 +247,15 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_hover_ui = 'preview'
 let g:lsp_semantic_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_virtual_text_enabled = 1
+let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
+let g:lsp_diagnostics_virtual_text_delay = 200
+let g:lsp_diagnostics_virtual_text_align = "right"
+let g:lsp_document_code_action_signs_delay = 200
+
 
 
 nnoremap <c-p> :Files<cr>
