@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-capslock'
+Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/searchfold.vim'
@@ -33,6 +34,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
 
 Plug 'tpope/vim-jdaddy', {'for': 'json'}
+
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 
@@ -290,8 +293,8 @@ nnoremap <c-l> <c-w>l
 
 nnoremap <leader>4 :NERDTreeToggle<cr>
 nnoremap <leader>5 :NERDTreeFind<cr>
+nnoremap <leader>6 :syntax sync minlines=10000<cr>
 
-" <leader>6
 " <leader>7
 " <leader>8
 " <leader>9
