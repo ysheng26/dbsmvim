@@ -257,7 +257,7 @@ augroup END
 let g:lsp_hover_ui = 'preview'
 let g:lsp_semantic_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_virtual_text_enabled = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
 let g:lsp_diagnostics_virtual_text_delay = 200
 let g:lsp_diagnostics_virtual_text_align = "right"
