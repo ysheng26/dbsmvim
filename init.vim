@@ -232,6 +232,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> <leader>O <plug>(lsp-workspace-symbol-search)
     nmap <buffer> <leader>i <plug>(lsp-implementation)
     nmap <buffer> <leader>t <plug>(lsp-type-definition)
+    nmap <buffer> <leader>d <plug>(lsp-document-diagnostics)
     nmap <buffer> <leader>rn <plug>(lsp-rename)
     nmap <buffer> <leader>. <plug>(lsp-code-action)
     nmap <buffer> [d <plug>(lsp-previous-diagnostic)
