@@ -255,7 +255,10 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
-let g:lsp_hover_ui = 'preview'
+" let g:lsp_hover_ui = 'preview'
+let g:lsp_hover_ui = 'float'
+let g:lsp_hover_conceal = 0
+let g:lsp_float_max_width = 0
 let g:lsp_semantic_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_diagnostics_virtual_text_enabled = 1
