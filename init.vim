@@ -26,12 +26,14 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
+Plug 'markonm/traces.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 
 Plug 'tpope/vim-jdaddy', {'for': 'json'}
 
@@ -184,6 +186,7 @@ set number
 " Syntax highlight setting
 syntax enable
 syntax on
+set maxmempattern=5000
 
 " Set encoding to utf-8
 set encoding=utf-8
@@ -265,7 +268,7 @@ let g:lsp_hover_conceal = 0
 let g:lsp_float_max_width = 0
 let g:lsp_semantic_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_virtual_text_enabled = 1
+let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
 let g:lsp_diagnostics_virtual_text_delay = 200
 let g:lsp_diagnostics_virtual_text_align = "right"
