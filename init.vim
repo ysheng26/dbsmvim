@@ -175,7 +175,8 @@ set ignorecase
 
 " Set highlight search result
 set hlsearch
-nnoremap <space> :nohlsearch<cr>
+" nnoremap <space> :nohlsearch<cr>
+nnoremap <esc> :nohlsearch<cr>
 
 " Set search
 set incsearch
