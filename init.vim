@@ -11,6 +11,7 @@ endif
 Plug 'jlanzarotta/bufexplorer'
 Plug 'preservim/nerdtree'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'rose-pine/vim'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -72,8 +73,8 @@ nnoremap N Nzzzv
 
 set t_Co=256
 set background=dark
-colorscheme PaperColor
-let g:airline_theme='papercolor'
+colorscheme rosepine_moon
+let g:airline_theme='soda'
 
 nnoremap <f9> :call DarkLightToggle()<cr>
 let g:dark_light_switch = 0
