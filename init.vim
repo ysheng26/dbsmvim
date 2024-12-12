@@ -40,7 +40,7 @@ Plug 'tpope/vim-jdaddy', {'for': 'json'}
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
@@ -74,21 +74,9 @@ nnoremap N Nzzzv
 set t_Co=256
 set background=dark
 colorscheme rosepine_moon
-let g:airline_theme='soda'
-
-nnoremap <f9> :call DarkLightToggle()<cr>
-let g:dark_light_switch = 0
-function! DarkLightToggle()
-    if g:dark_light_switch
-        set background=dark
-        colorscheme PaperColor
-        let g:dark_light_switch = 0
-    else
-        set background=light
-        colorscheme PaperColor
-        let g:dark_light_switch = 1
-    endif
-endfunction
+" config airline
+" let g:airline_theme='soda'
+" let g:airline_symbols_ascii = 1
 
 set colorcolumn=80
 set cmdheight=2
@@ -98,6 +86,23 @@ set guioptions=
 
 " Always show statusline
 set laststatus=2
+
+let g:lightline = {
+      \ 'colorscheme': 'rosepine',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 
 " show fencview and fugitive in normal statusline
@@ -110,9 +115,6 @@ set statusline+=\%r%=[%b\ 0x%B]
 set statusline+=\ %l\ of\ %L,%c%V
 set statusline+=\ Page\ %N
 set statusline+=\ %P
-
-" config airline
-let g:airline_symbols_ascii = 1
 
 set wildmenu
 
