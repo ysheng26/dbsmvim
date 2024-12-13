@@ -9,7 +9,7 @@ else
 endif
 
 Plug 'jlanzarotta/bufexplorer'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rose-pine/vim'
 Plug 'tpope/vim-rsi'
@@ -54,22 +54,22 @@ filetype plugin indent on
 let mapleader = ","
 let maplocalleader = "\\"
 inoremap jk <esc>
-nnoremap j gj
-nnoremap k gk
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
+" nnoremap j gj
+" nnoremap k gk
+" nnoremap ; :
+" nnoremap : ;
+" vnoremap ; :
+" vnoremap : ;
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
 " Better indentation
-vnoremap < <gv
-vnoremap > >gv
+" vnoremap < <gv
+" vnoremap > >gv
 
 " Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
+" nnoremap n nzzzv
+" nnoremap N Nzzzv
 
 set t_Co=256
 set background=dark
@@ -307,8 +307,14 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-nnoremap <leader>4 :NERDTreeToggle<cr>
-nnoremap <leader>5 :NERDTreeFind<cr>
+let g:netrw_liststyle = 3
+
+" nnoremap <leader>4 :NERDTreeToggle<cr>
+" nnoremap <leader>5 :NERDTreeFind<cr>
+
+nnoremap <leader>4 :Vexplor<cr>
+map <Leader>5 :let @/=expand("%:t") <Bar> execute 'Vexplore' expand("%:h") <Bar> normal n<CR>
+
 nnoremap <leader>6 :syntax sync minlines=10000<cr>
 
 " <leader>7
