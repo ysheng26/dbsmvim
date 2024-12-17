@@ -9,9 +9,7 @@ else
 endif
 
 Plug 'jlanzarotta/bufexplorer'
-" Plug 'preservim/nerdtree'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'rose-pine/vim'
+Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -73,10 +71,9 @@ nnoremap <leader>q :q<cr>
 
 set t_Co=256
 set background=dark
-colorscheme rosepine_moon
-" config airline
-" let g:airline_theme='soda'
-" let g:airline_symbols_ascii = 1
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_contrast_light = "hard"
+colorscheme gruvbox
 
 set colorcolumn=80
 set cmdheight=2
@@ -88,7 +85,7 @@ set guioptions=
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'rosepine',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -233,18 +230,19 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> <leader>g <plug>(lsp-definition)
-    nmap <buffer> <leader>s <plug>(lsp-references)
-    nmap <buffer> <leader>o <plug>(lsp-document-symbol-search)
-    nmap <buffer> <leader>O <plug>(lsp-workspace-symbol-search)
-    nmap <buffer> <leader>i <plug>(lsp-implementation)
-    nmap <buffer> <leader>t <plug>(lsp-type-definition)
-    nmap <buffer> <leader>d <plug>(lsp-document-diagnostics)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> <leader>. <plug>(lsp-code-action)
-    nmap <buffer> [d <plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]d <plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> <leader>g <plug>(lsp-definition)
+    nnoremap <buffer> <leader>G <plug>(lsp-declaration)
+    nnoremap <buffer> <leader>s <plug>(lsp-references)
+    nnoremap <buffer> <leader>t <plug>(lsp-type-definition)
+    nnoremap <buffer> <leader>i <plug>(lsp-implementation)
+    nnoremap <buffer> gs <plug>(lsp-document-symbol-search)
+    nnoremap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nnoremap <buffer> <leader>d <plug>(lsp-document-diagnostics)
+    nnoremap <buffer> cd <plug>(lsp-rename)
+    nnoremap <buffer> g. <plug>(lsp-code-action)
+    nnoremap <buffer> [d <plug>(lsp-previous-diagnostic)
+    nnoremap <buffer> ]d <plug>(lsp-next-diagnostic)
+    nnoremap <buffer> K <plug>(lsp-hover)
     nnoremap <buffer> <expr><down> lsp#scroll(+1)
     nnoremap <buffer> <expr><up> lsp#scroll(-1)
     nnoremap <buffer> <expr><right> lsp#scroll(+5)
@@ -259,6 +257,7 @@ function! s:on_lsp_buffer_enabled() abort
 
     " refer to doc to add more commands
 endfunction
+
 
 augroup lsp_install
     au!
