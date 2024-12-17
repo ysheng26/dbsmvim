@@ -8,8 +8,14 @@ else
     call plug#begin()
 endif
 
+if has("nvim")
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'rose-pine/neovim'
+else
+    Plug 'rose-pine/vim'
+endif
+
 Plug 'jlanzarotta/bufexplorer'
-Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
@@ -71,9 +77,12 @@ nnoremap <leader>q :q<cr>
 
 set t_Co=256
 set background=dark
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_contrast_light = "hard"
-colorscheme gruvbox
+
+if has("nvim")
+    colorscheme rose-pine-moon
+else
+    colorscheme rosepine_moon
+endif
 
 set colorcolumn=80
 set cmdheight=2
@@ -85,7 +94,7 @@ set guioptions=
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'rosepine',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -333,3 +342,8 @@ elseif has("unix")
     " guifont for linux
     set guifont=DejavuSansMono\ 13
 endif
+
+if has("nvim")
+    lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+endif
+
