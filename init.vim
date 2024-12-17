@@ -11,8 +11,10 @@ endif
 if has("nvim")
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'rose-pine/neovim'
+    set inccommand=nosplit
 else
     Plug 'rose-pine/vim'
+    Plug 'markonm/traces.vim'
 endif
 
 Plug 'jlanzarotta/bufexplorer'
@@ -31,7 +33,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/searchfold.vim'
 Plug 'majutsushi/tagbar'
-Plug 'markonm/traces.vim'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
