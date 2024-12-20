@@ -300,6 +300,11 @@ nnoremap <leader>m :BufExplorer<cr>
 " ripgrep with fzf
 nnoremap <leader>a :Rg <c-r><c-w><cr>
 
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+    set grepformat+=%f:%l:%c:%m
+endif
+
 " Manage split screens
 nnoremap <leader>1 :only<cr>
 nnoremap <leader>2 :split<cr>
