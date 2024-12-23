@@ -9,33 +9,98 @@ else
 endif
 
 if has("nvim")
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'rose-pine/neovim'
     set inccommand=nosplit
+    Plug 'rose-pine/neovim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 else
-    Plug 'rose-pine/vim'
     Plug 'markonm/traces.vim'
+    Plug 'rose-pine/vim'
+
+
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
+    nnoremap <c-p> :Files<cr>
+    nnoremap <leader>a :Rg <c-r><c-w><cr>
+    nnoremap g/ :RG <cr>
+    let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
+
+
+    Plug 'jlanzarotta/bufexplorer'
+    nnoremap <leader>m :BufExplorer<cr>
+
+
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+    function! s:on_lsp_buffer_enabled() abort
+        setlocal omnifunc=lsp#complete
+        setlocal signcolumn=yes
+        if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+        nnoremap <buffer> <leader>g <plug>(lsp-definition)
+        nnoremap <buffer> <leader>G <plug>(lsp-declaration)
+        nnoremap <buffer> <leader>s <plug>(lsp-references)
+        nnoremap <buffer> <leader>t <plug>(lsp-type-definition)
+        nnoremap <buffer> <leader>i <plug>(lsp-implementation)
+        nnoremap <buffer> gs <plug>(lsp-document-symbol-search)
+        nnoremap <buffer> gS <plug>(lsp-workspace-symbol-search)
+        nnoremap <buffer> <leader>d <plug>(lsp-document-diagnostics)
+        nnoremap <buffer> cd <plug>(lsp-rename)
+        nnoremap <buffer> g. <plug>(lsp-code-action)
+        nnoremap <buffer> [d <plug>(lsp-previous-diagnostic)
+        nnoremap <buffer> ]d <plug>(lsp-next-diagnostic)
+        nnoremap <buffer> K <plug>(lsp-hover)
+        nnoremap <buffer> <expr><down> lsp#scroll(+1)
+        nnoremap <buffer> <expr><up> lsp#scroll(-1)
+        nnoremap <buffer> <expr><right> lsp#scroll(+5)
+        nnoremap <buffer> <expr><left> lsp#scroll(-5)
+        inoremap <buffer> <expr><down> lsp#scroll(+1)
+        inoremap <buffer> <expr><up> lsp#scroll(-1)
+        inoremap <buffer> <expr><right> lsp#scroll(+5)
+        inoremap <buffer> <expr><left> lsp#scroll(-5)
+
+        let g:lsp_format_sync_timeout = 1000
+        autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+
+        " refer to doc to add more commands
+    endfunction
+
+
+    augroup lsp_install
+        au!
+        " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+        autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    augroup END
+
+    " let g:lsp_hover_ui = 'preview'
+    let g:lsp_hover_ui = 'float'
+    let g:lsp_hover_conceal = 0
+    let g:lsp_float_max_width = 0
+    let g:lsp_semantic_enabled = 1
+    let g:lsp_diagnostics_echo_cursor = 1
+    let g:lsp_diagnostics_virtual_text_enabled = 0
+    let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
+    let g:lsp_diagnostics_virtual_text_delay = 200
+    let g:lsp_diagnostics_virtual_text_align = "right"
+    let g:lsp_diagnostics_virtual_text_wrap = "truncate"
+    let g:lsp_document_code_action_signs_delay = 200
+
 endif
 
-Plug 'jlanzarotta/bufexplorer'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-capslock'
 Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/searchfold.vim'
-Plug 'majutsushi/tagbar'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'mbbill/fencview', {'on': 'FencAutoDetect'}
@@ -47,10 +112,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -69,12 +130,12 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
 " Better indentation
-" vnoremap < <gv
-" vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " Keep search matches in the middle of the window.
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 
 set t_Co=256
 set background=dark
@@ -197,7 +258,7 @@ set number
 " Syntax highlight setting
 syntax enable
 syntax on
-set maxmempattern=5000
+" set maxmempattern=5000
 
 " Set encoding to utf-8
 set encoding=utf-8
@@ -235,70 +296,6 @@ autocmd FileType python set commentstring=#\ %s
 autocmd FileType c set commentstring=//\ %s
 autocmd FileType cpp set commentstring=//\ %s
 
-" vim-lsp
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    setlocal signcolumn=yes
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nnoremap <buffer> <leader>g <plug>(lsp-definition)
-    nnoremap <buffer> <leader>G <plug>(lsp-declaration)
-    nnoremap <buffer> <leader>s <plug>(lsp-references)
-    nnoremap <buffer> <leader>t <plug>(lsp-type-definition)
-    nnoremap <buffer> <leader>i <plug>(lsp-implementation)
-    nnoremap <buffer> gs <plug>(lsp-document-symbol-search)
-    nnoremap <buffer> gS <plug>(lsp-workspace-symbol-search)
-    nnoremap <buffer> <leader>d <plug>(lsp-document-diagnostics)
-    nnoremap <buffer> cd <plug>(lsp-rename)
-    nnoremap <buffer> g. <plug>(lsp-code-action)
-    nnoremap <buffer> [d <plug>(lsp-previous-diagnostic)
-    nnoremap <buffer> ]d <plug>(lsp-next-diagnostic)
-    nnoremap <buffer> K <plug>(lsp-hover)
-    nnoremap <buffer> <expr><down> lsp#scroll(+1)
-    nnoremap <buffer> <expr><up> lsp#scroll(-1)
-    nnoremap <buffer> <expr><right> lsp#scroll(+5)
-    nnoremap <buffer> <expr><left> lsp#scroll(-5)
-    inoremap <buffer> <expr><down> lsp#scroll(+1)
-    inoremap <buffer> <expr><up> lsp#scroll(-1)
-    inoremap <buffer> <expr><right> lsp#scroll(+5)
-    inoremap <buffer> <expr><left> lsp#scroll(-5)
-
-    let g:lsp_format_sync_timeout = 1000
-    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
-
-    " refer to doc to add more commands
-endfunction
-
-
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-
-" let g:lsp_hover_ui = 'preview'
-let g:lsp_hover_ui = 'float'
-let g:lsp_hover_conceal = 0
-let g:lsp_float_max_width = 0
-let g:lsp_semantic_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_diagnostics_virtual_text_enabled = 0
-let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
-let g:lsp_diagnostics_virtual_text_delay = 200
-let g:lsp_diagnostics_virtual_text_align = "right"
-let g:lsp_diagnostics_virtual_text_wrap = "truncate"
-let g:lsp_document_code_action_signs_delay = 200
-
-
-
-nnoremap <c-p> :Files<cr>
-let g:fzf_history_dir = '~/.vim/tmp/fzf-history'
-
-
-" buffer explorer setup
-nnoremap <leader>m :BufExplorer<cr>
-
-" ripgrep with fzf
-nnoremap <leader>a :Rg <c-r><c-w><cr>
 
 if executable('rg')
     set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -322,15 +319,10 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 let g:netrw_liststyle = 3
-
-" nnoremap <leader>4 :NERDTreeToggle<cr>
-" nnoremap <leader>5 :NERDTreeFind<cr>
-
 nnoremap <leader>4 :Vexplor<cr>
 map <Leader>5 :let @/=expand("%:t") <Bar> execute 'Vexplore' expand("%:h") <Bar> normal n<CR>
 
-nnoremap <leader>6 :syntax sync minlines=10000<cr>
-
+" <leader>6
 " <leader>7
 " <leader>8
 " <leader>9
@@ -350,6 +342,6 @@ elseif has("unix")
 endif
 
 if has("nvim")
-    lua require'nvim-treesitter.configs'.setup{highlight={enable=true}}
+    lua require('setup')
 endif
 
