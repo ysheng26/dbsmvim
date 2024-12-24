@@ -40,7 +40,8 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
     snippet = {
         expand = function(args)
-            vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+            -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
@@ -58,6 +59,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
+        { name = 'luasnip' }, -- For luasnip users.
     }, {
         { name = "buffer" },
     }),

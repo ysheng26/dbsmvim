@@ -27,6 +27,9 @@ if has("nvim")
     Plug 'stevearc/conform.nvim'
     Plug 'stevearc/oil.nvim'
     Plug 'lewis6991/gitsigns.nvim'
+    Plug 'L3MON4D3/LuaSnip'
+    Plug 'saadparwaiz1/cmp_luasnip'
+    Plug 'rafamadriz/friendly-snippets'
 else
     Plug 'markonm/traces.vim'
     Plug 'rose-pine/vim'
