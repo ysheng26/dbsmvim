@@ -14,16 +14,16 @@ if has("nvim")
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
-
+    Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'stevearc/conform.nvim'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
+    Plug 'stevearc/conform.nvim'
+    Plug 'stevearc/oil.nvim'
 else
     Plug 'markonm/traces.vim'
     Plug 'rose-pine/vim'
@@ -327,9 +327,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 let g:netrw_liststyle = 3
-nnoremap <leader>4 :Vexplor<cr>
-map <Leader>5 :let @/=expand("%:t") <Bar> execute 'Vexplore' expand("%:h") <Bar> normal n<CR>
 
+" <leader>4
+" <leader>5
 " <leader>6
 " <leader>7
 " <leader>8
