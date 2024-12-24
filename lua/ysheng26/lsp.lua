@@ -34,7 +34,16 @@ require("mason-lspconfig").setup({
     },
 })
 
--- autocomplete
+-- autocomplete and luasnip
+require("luasnip.loaders.from_vscode").lazy_load()
+local luasnip = require("luasnip")
+vim.keymap.set({ "i" }, "<c-k>", function() luasnip.expand() end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<c-e>", function()
+    if luasnip.choice_active() then
+        luasnip.change_choice(1)
+    end
+end, { silent = true })
+
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 cmp.setup({
@@ -52,14 +61,33 @@ cmp.setup({
         ["<c-p>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<c-n>"] = cmp.mapping.select_next_item(cmp_select),
         ["<enter>"] = cmp.mapping.confirm({ select = true }),
-        ["<tab>"] = cmp.mapping.confirm({ select = true }),
         ["<c-space>"] = cmp.mapping.complete(),
         ["<c-u>"] = cmp.mapping.scroll_docs(-5),
         ["<c-d>"] = cmp.mapping.scroll_docs(5),
+        ["<cr>"] = cmp.mapping.confirm({ select = true }),
+        -- based on https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
+        ["<tab>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(1) then
+                luasnip.jump(1)
+            elseif cmp.visible() then
+                cmp.confirm({
+                    select = true,
+                })
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<s-tab>"] = cmp.mapping(function(fallback)
+            if luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = 'luasnip' }, -- For luasnip users.
+        { name = 'luasnip' },
     }, {
         { name = "buffer" },
     }),
