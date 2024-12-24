@@ -1,8 +1,10 @@
 
 
-## TODO
+## Done
+- Telescope
 - Setup init.lua with init.vim
 - LSP
-- Telescope
 - oil.nvim
 
+## TODO
+- snippets
