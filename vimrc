@@ -14,6 +14,7 @@ if has("nvim")
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+    Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/mason.nvim'
     Plug 'williamboman/mason-lspconfig.nvim'

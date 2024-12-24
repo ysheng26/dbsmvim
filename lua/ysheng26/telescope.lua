@@ -2,11 +2,11 @@ local actions = require "telescope.actions"
 
 require("telescope").setup {
     extensions = {
-        -- ["ui-select"] = {
-        --   require("telescope.themes").get_dropdown {
-        --     -- even more opts
-        --   },
-        -- },
+        ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+                -- even more opts
+            },
+        },
     },
     defaults = {
         -- file_ignore_patterns = { "%mock_test_.go", "%mocks_temp.go" },
@@ -25,6 +25,7 @@ require("telescope").setup {
         },
     },
 }
+require("telescope").load_extension("ui-select")
 
 
 local builtin = require('telescope.builtin')
