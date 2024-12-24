@@ -36,6 +36,7 @@ require("mason-lspconfig").setup({
 
 -- autocomplete and luasnip
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = './ysheng26-snippets' })
 local luasnip = require("luasnip")
 vim.keymap.set({ "i" }, "<c-k>", function() luasnip.expand() end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<c-e>", function()

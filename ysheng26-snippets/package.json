@@ -1,0 +1,17 @@
+{
+    "name": "ysheng26-snippets",
+    "engines": {
+        "vscode": "^1.11.0"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "global",
+                    "all"
+                ],
+                "path": "./snippets/global.json"
+            }
+        ]
+    }
+}
