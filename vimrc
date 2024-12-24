@@ -12,6 +12,7 @@ if has("nvim")
     set inccommand=nosplit
     Plug 'rose-pine/neovim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
     Plug 'nvim-telescope/telescope-ui-select.nvim'
@@ -25,9 +26,11 @@ if has("nvim")
     Plug 'hrsh7th/nvim-cmp'
     Plug 'stevearc/conform.nvim'
     Plug 'stevearc/oil.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
 else
     Plug 'markonm/traces.vim'
     Plug 'rose-pine/vim'
+    Plug 'airblade/vim-gitgutter'
 
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -108,7 +111,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-Plug 'airblade/vim-gitgutter'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-scripts/searchfold.vim'
 
