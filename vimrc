@@ -122,7 +122,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'itchyny/lightline.vim'
 
-
 call plug#end()
 filetype plugin indent on
 
@@ -130,12 +129,12 @@ filetype plugin indent on
 let mapleader = ","
 let maplocalleader = "\\"
 inoremap jk <esc>
-" nnoremap j gj
-" nnoremap k gk
-" nnoremap ; :
-" nnoremap : ;
-" vnoremap ; :
-" vnoremap : ;
+nnoremap j gj
+nnoremap k gk
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 
@@ -253,8 +252,7 @@ set ignorecase
 
 " Set highlight search result
 set hlsearch
-" nnoremap <space> :nohlsearch<cr>
-nnoremap <esc> :nohlsearch<cr>
+nnoremap <space> :nohlsearch<cr>
 
 " Set search
 set incsearch
