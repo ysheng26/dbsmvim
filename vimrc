@@ -155,9 +155,7 @@ nnoremap N Nzzzv
 set t_Co=256
 set background=dark
 
-if has("nvim")
-    colorscheme rose-pine-moon
-else
+if !has("nvim")
     colorscheme rosepine_moon
 endif
 
