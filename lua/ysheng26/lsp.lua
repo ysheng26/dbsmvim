@@ -36,7 +36,7 @@ require("mason-lspconfig").setup({
 
 -- autocomplete and luasnip
 require("luasnip.loaders.from_vscode").lazy_load()
-require("luasnip.loaders.from_vscode").lazy_load({ paths = './ysheng26-snippets' })
+require("luasnip.loaders.from_vscode").lazy_load({ paths = "./ysheng26-snippets" })
 local luasnip = require("luasnip")
 vim.keymap.set({ "i" }, "<c-k>", function() luasnip.expand() end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<c-e>", function()
@@ -51,7 +51,7 @@ cmp.setup({
     snippet = {
         expand = function(args)
             -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
@@ -88,7 +88,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = 'luasnip' },
+        { name = "luasnip" },
     }, {
         { name = "buffer" },
     }),
@@ -98,8 +98,8 @@ cmp.setup({
 -- keymaps
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-local ysheng26Group = augroup('ysheng26', {})
-autocmd('LspAttach', {
+local ysheng26Group = augroup("ysheng26", {})
+autocmd("LspAttach", {
     group = ysheng26Group,
     callback = function(e)
         local opts = { buffer = e.buf }

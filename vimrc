@@ -1,14 +1,14 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-if has("win32")
+if has('win32')
     let path='$VIM/vimfiles/plugged'
     call plug#begin(path)
 else
     call plug#begin()
 endif
 
-if has("nvim")
+if has('nvim')
     set inccommand=nosplit
     Plug 'rose-pine/neovim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -100,8 +100,8 @@ else
     let g:lsp_diagnostics_virtual_text_enabled = 0
     let g:lsp_diagnostics_virtual_text_insert_mode_enabled = 1
     let g:lsp_diagnostics_virtual_text_delay = 200
-    let g:lsp_diagnostics_virtual_text_align = "right"
-    let g:lsp_diagnostics_virtual_text_wrap = "truncate"
+    let g:lsp_diagnostics_virtual_text_align = 'right'
+    let g:lsp_diagnostics_virtual_text_wrap = 'truncate'
     let g:lsp_document_code_action_signs_delay = 200
 
 endif
@@ -132,8 +132,8 @@ call plug#end()
 filetype plugin indent on
 
 " Below is customized settings
-let mapleader = ","
-let maplocalleader = "\\"
+let mapleader = ','
+let maplocalleader = '\\'
 inoremap jk <esc>
 nnoremap j gj
 nnoremap k gk
@@ -155,7 +155,7 @@ nnoremap N Nzzzv
 set t_Co=256
 set background=dark
 
-if !has("nvim")
+if !has('nvim')
     colorscheme rosepine_moon
 endif
 
@@ -238,13 +238,13 @@ set directory=~/.vim/tmp/swap//   " Swap files
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+    call mkdir(expand(&undodir), 'p')
 endif
 if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
+    call mkdir(expand(&backupdir), 'p')
 endif
 if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
+    call mkdir(expand(&directory), 'p')
 endif
 
 " Make sure crontab doesn't explode
@@ -342,18 +342,18 @@ let g:netrw_liststyle = 3
 nnoremap <leader>0 :echomsg expand('%:p')<cr>
 
 " guifont settings
-if has("win32")
+if has('win32')
     " guifont for windows
     set guifont=DejaVu\ Sans\ Mono:h13
-elseif has("macunix")
+elseif has('macunix')
     " guifont for mac
     set guifont=DejaVu\ Sans\ Mono:h18
-elseif has("unix")
+elseif has('unix')
     " guifont for linux
     set guifont=DejavuSansMono\ 13
 endif
 
-if has("nvim")
+if has('nvim')
     lua require('setup')
 endif
 
