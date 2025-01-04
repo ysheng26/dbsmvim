@@ -270,7 +270,7 @@ set number
 " Syntax highlight setting
 syntax enable
 syntax on
-" set maxmempattern=5000
+set maxmempattern=2000000
 
 " Set encoding to utf-8
 set encoding=utf-8
