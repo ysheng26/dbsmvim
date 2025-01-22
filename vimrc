@@ -10,7 +10,7 @@ endif
 
 if has('nvim')
     set inccommand=nosplit
-    Plug 'rose-pine/neovim'
+    " Plug 'rose-pine/neovim'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-lua/plenary.nvim'
@@ -32,7 +32,7 @@ if has('nvim')
     Plug 'rafamadriz/friendly-snippets'
 else
     Plug 'markonm/traces.vim'
-    Plug 'rose-pine/vim'
+    " Plug 'rose-pine/vim'
     Plug 'airblade/vim-gitgutter'
 
 
@@ -127,6 +127,7 @@ Plug 'tpope/vim-jdaddy', {'for': 'json'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
 
 call plug#end()
 filetype plugin indent on
@@ -154,10 +155,13 @@ nnoremap N Nzzzv
 
 set t_Co=256
 set background=dark
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
 
-if !has('nvim')
-    colorscheme rosepine_moon
-endif
+" if !has('nvim')
+"     colorscheme rosepine_moon
+" endif
 
 set colorcolumn=80
 set cmdheight=2
@@ -169,7 +173,7 @@ set guioptions=
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'rosepine',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
