@@ -153,6 +153,7 @@ vnoremap > >gv
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+set termguicolors
 set t_Co=256
 set background=dark
 let g:molokai_original = 1
