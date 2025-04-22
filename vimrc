@@ -144,6 +144,7 @@ vnoremap ; :
 vnoremap : ;
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+xnoremap p P
 
 " Better indentation
 vnoremap < <gv
