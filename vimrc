@@ -163,7 +163,7 @@ set background=dark
 colorscheme unokai
 
 set background=light
-colorscheme lunaperche
+colorscheme wildcharm
 
 " if !has('nvim')
 "     colorscheme rosepine_moon
