@@ -128,6 +128,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'itchyny/lightline.vim'
 Plug 'tomasr/molokai'
+Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
 filetype plugin indent on
@@ -163,7 +164,8 @@ set background=dark
 colorscheme unokai
 
 set background=light
-colorscheme wildcharm
+" colorscheme wildcharm
+colorscheme vscode
 
 " if !has('nvim')
 "     colorscheme rosepine_moon
