@@ -31,4 +31,4 @@ require('vscode').setup({
     -- }
 })
 
--- vim.cmd.colorscheme "vscode"
+vim.cmd.colorscheme "vscode"
