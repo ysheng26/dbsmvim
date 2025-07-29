@@ -10,7 +10,7 @@ endif
 
 if has('nvim')
     set inccommand=nosplit
-    " Plug 'rose-pine/neovim'
+    set winborder=rounded
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-lua/plenary.nvim'
@@ -32,7 +32,6 @@ if has('nvim')
     Plug 'rafamadriz/friendly-snippets'
 else
     Plug 'markonm/traces.vim'
-    " Plug 'rose-pine/vim'
     Plug 'airblade/vim-gitgutter'
 
 
