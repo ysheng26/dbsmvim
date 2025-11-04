@@ -323,7 +323,6 @@ set winminwidth=0
 set splitbelow
 set splitright
 nnoremap <leader>x <c-w>\|<c-w>_
-nnoremap <leader>k <c-w>z
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
