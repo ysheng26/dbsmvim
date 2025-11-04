@@ -10,7 +10,7 @@ endif
 
 if has('nvim')
     set inccommand=nosplit
-    Plug 'rose-pine/neovim'
+    set winborder=rounded
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-lua/plenary.nvim'
@@ -32,7 +32,6 @@ if has('nvim')
     Plug 'rafamadriz/friendly-snippets'
 else
     Plug 'markonm/traces.vim'
-    Plug 'rose-pine/vim'
     Plug 'airblade/vim-gitgutter'
 
 
@@ -127,6 +126,8 @@ Plug 'tpope/vim-jdaddy', {'for': 'json'}
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 Plug 'itchyny/lightline.vim'
+Plug 'tomasr/molokai'
+Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
 filetype plugin indent on
@@ -143,6 +144,7 @@ vnoremap ; :
 vnoremap : ;
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
+xnoremap p P
 
 " Better indentation
 vnoremap < <gv
@@ -152,12 +154,21 @@ vnoremap > >gv
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+set termguicolors
 set t_Co=256
 set background=dark
+" let g:molokai_original = 1
+" let g:rehash256 = 1
+" colorscheme molokai
+colorscheme unokai
 
-if !has('nvim')
-    colorscheme rosepine_moon
-endif
+set background=light
+" colorscheme wildcharm
+colorscheme vscode
+
+" if !has('nvim')
+"     colorscheme rosepine_moon
+" endif
 
 set colorcolumn=80
 set cmdheight=2
@@ -169,7 +180,7 @@ set guioptions=
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'rosepine',
+      \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -270,7 +281,7 @@ set number
 " Syntax highlight setting
 syntax enable
 syntax on
-" set maxmempattern=5000
+set maxmempattern=2000000
 
 " Set encoding to utf-8
 set encoding=utf-8

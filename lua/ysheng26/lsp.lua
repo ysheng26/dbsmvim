@@ -55,8 +55,8 @@ cmp.setup({
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ["<c-p>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -114,7 +114,12 @@ autocmd("LspAttach", {
         -- vim.keymap.set("n", "gs", vim.lsp.buf.document_symbol, opts)
         -- vim.keymap.set("n", "gS", vim.lsp.buf.workspace_symbol, opts)
         vim.keymap.set("n", "gs", telescope_builtin.lsp_document_symbols, opts)
-        vim.keymap.set("n", "gS", telescope_builtin.lsp_workspace_symbols, opts)
+        -- vim.keymap.set("n", "gS", telescope_builtin.lsp_workspace_symbols, opts)
+        vim.keymap.set("n", "gS", function()
+            vim.ui.input({ prompt = "Workspace Symbols: " }, function(query)
+                telescope_builtin.lsp_workspace_symbols({ query = query })
+            end)
+        end, { desc = "LSP Workspace Symbols" })
         vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist, opts)
         vim.keymap.set("n", "<leader>D", vim.diagnostic.setqflist, opts)
         vim.keymap.set("n", "cd", vim.lsp.buf.rename, opts)

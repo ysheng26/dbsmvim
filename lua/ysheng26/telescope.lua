@@ -28,8 +28,15 @@ require("telescope").setup {
 require("telescope").load_extension("ui-select")
 
 
+local M = {}
 local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<c-p>", builtin.find_files, { desc = "Telescope find files" })
+M.find_files = function()
+    builtin.find_files {
+        find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+    }
+end
+
+vim.keymap.set("n", "<c-p>", M.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>a", builtin.grep_string, { desc = "Telescope grep string" })
 vim.keymap.set("n", "g/", builtin.live_grep, { desc = "Telescope live grep" })
 vim.keymap.set("n", "<leader>m", builtin.buffers, { desc = "Telescope buffers" })

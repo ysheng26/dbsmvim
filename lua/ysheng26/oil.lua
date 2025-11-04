@@ -7,6 +7,8 @@ require("oil").setup {
         show_hidden = true,
     },
     keymaps = {
+        ["<C-p>"] = false,
+        ["<space>"] = "actions.preview",
         ["gd"] = {
             desc = "Toggle file detail view",
             callback = function()
