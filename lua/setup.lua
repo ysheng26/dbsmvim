@@ -1,4 +1,5 @@
 require("ysheng26/conform")
+require("ysheng26/copilot")
 require("ysheng26/gitsigns")
 require("ysheng26/lsp")
 require("ysheng26/oil")

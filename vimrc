@@ -30,6 +30,7 @@ if has('nvim')
     Plug 'L3MON4D3/LuaSnip'
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'rafamadriz/friendly-snippets'
+    Plug 'github/copilot.vim'
 else
     Plug 'markonm/traces.vim'
     Plug 'airblade/vim-gitgutter'
@@ -124,9 +125,10 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'tpope/vim-jdaddy', {'for': 'json'}
 
 Plug 'rust-lang/rust.vim', {'for': 'rust'}
+Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
+" Plug 'tomasr/molokai'
 Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()

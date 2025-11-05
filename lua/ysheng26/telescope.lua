@@ -1,39 +1,38 @@
-local actions = require "telescope.actions"
+local actions = require("telescope.actions")
 
-require("telescope").setup {
-    extensions = {
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-                -- even more opts
-            },
-        },
-    },
-    defaults = {
-        -- file_ignore_patterns = { "%mock_test_.go", "%mocks_temp.go" },
-        mappings = {
-            i = {
-                -- Also close on Esc in insert mode
-                ["<esc>"] = actions.close,
-                ["<c-j>"] = actions.move_selection_next,
-                ["<c-k>"] = actions.move_selection_previous,
-                ["<c-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
-            },
-            n = {
-                ["<c-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
-                ["<space>"] = actions.toggle_selection,
-            }
-        },
-    },
-}
+require("telescope").setup({
+	extensions = {
+		["ui-select"] = {
+			require("telescope.themes").get_dropdown({
+				-- even more opts
+			}),
+		},
+	},
+	defaults = {
+		-- file_ignore_patterns = { "%mock_test_.go", "%mocks_temp.go" },
+		mappings = {
+			i = {
+				-- Also close on Esc in insert mode
+				["<esc>"] = actions.close,
+				["<c-j>"] = actions.move_selection_next,
+				["<c-k>"] = actions.move_selection_previous,
+				["<c-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
+			},
+			n = {
+				["<c-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				["<space>"] = actions.toggle_selection,
+			},
+		},
+	},
+})
 require("telescope").load_extension("ui-select")
-
 
 local M = {}
 local builtin = require("telescope.builtin")
 M.find_files = function()
-    builtin.find_files {
-        find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
-    }
+	builtin.find_files({
+		find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+	})
 end
 
 vim.keymap.set("n", "<c-p>", M.find_files, { desc = "Telescope find files" })
