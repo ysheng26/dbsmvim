@@ -11,10 +11,10 @@ endif
 if has('nvim')
     set inccommand=nosplit
     set winborder=rounded
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch': 'main'}
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+    Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'neovim/nvim-lspconfig'
     Plug 'williamboman/mason.nvim'
