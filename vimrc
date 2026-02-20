@@ -128,7 +128,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'itchyny/lightline.vim'
-" Plug 'tomasr/molokai'
+Plug 'tomasr/molokai'
 Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
@@ -159,14 +159,14 @@ nnoremap N Nzzzv
 
 set termguicolors
 set t_Co=256
-" let g:molokai_original = 1
-" let g:rehash256 = 1
-" set background=dark
-" colorscheme molokai
-set background=light
-colorscheme wildcharm
+let g:molokai_original = 1
+let g:rehash256 = 1
+set background=dark
+colorscheme molokai
+" set background=light
+" colorscheme wildcharm
 
-colorscheme vscode
+" colorscheme vscode
 
 " if !has('nvim')
 "     colorscheme rosepine_moon
@@ -182,7 +182,7 @@ set guioptions=
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'molokai',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
