@@ -13,6 +13,7 @@ if has('nvim')
     set winborder=rounded
     Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
     Plug 'nvim-treesitter/nvim-treesitter-textobjects', {'branch': 'main'}
+    Plug 'nvim-treesitter/nvim-treesitter-context'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-ui-select.nvim'
