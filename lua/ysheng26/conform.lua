@@ -11,9 +11,10 @@ require("conform").setup({
 		go = { "gofmt", "goimports", lsp_format = "fallback" },
 
 		-- Conform will run the first available formatter
-		-- javascript = { "prettierd", "prettier", stop_after_first = true },
-		javascript = { "prettier", stop_after_first = true },
-		typescript = { "prettier", stop_after_first = true },
+		javascript = { "prettierd", "prettier", stop_after_first = true },
+		typescript = { "prettierd", "prettier", stop_after_first = true },
+		javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+		typescriptreact = { "prettierd", "prettier", stop_after_first = true },
 	},
 	format_on_save = function(bufnr)
 		-- Disable with a global or buffer-local variable
