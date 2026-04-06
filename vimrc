@@ -129,6 +129,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'itchyny/lightline.vim'
+" Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
 filetype plugin indent on
