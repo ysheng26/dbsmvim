@@ -129,8 +129,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'itchyny/lightline.vim'
-Plug 'tomasr/molokai'
-Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
 filetype plugin indent on
@@ -160,18 +158,48 @@ nnoremap N Nzzzv
 
 set termguicolors
 set t_Co=256
-let g:molokai_original = 1
-let g:rehash256 = 1
-set background=dark
-colorscheme molokai
-" set background=light
-" colorscheme wildcharm
 
-" colorscheme vscode
+colorscheme unokai
+" Set popup background
+hi NormalFloat guibg=#1e1e1e
+" Set border to white with matching background
+hi FloatBorder guifg=#ffffff guibg=#1e1e1e
+" Set title to cyan
+hi FloatTitle guifg=#66d9ef guibg=#1e1e1e gui=NONE
 
-" if !has('nvim')
-"     colorscheme rosepine_moon
-" endif
+" unokai reverts
+" Revert Types to Cyan
+hi! Type guifg=#66d9ef gui=NONE
+hi! Structure guifg=#66d9ef gui=NONE
+" Revert Functions to Green
+hi! Function guifg=#a6e22e
+" Revert Identifier to Green
+hi! Identifier guifg=#f8f8f2
+" Revert Directory to Green
+" hi! Directory guifg=#a6e22e
+
+" Unbold the standard language keywords (if, else, return, etc.)
+hi! Keyword guifg=#f92672 gui=NONE
+hi! Statement guifg=#f92672 gui=NONE
+" Unbold specific declaration keywords (func, package, type, var)
+hi! PreProc guifg=#f92672 gui=NONE
+hi! Define guifg=#f92672 gui=NONE
+
+" Force Attributes to Green (#a6e22e)
+" This targets standard HTML, JSX, and Treesitter patterns
+hi! htmlArg guifg=#a6e22e gui=NONE
+hi! tsxAttrib guifg=#a6e22e gui=NONE
+hi! jsxAttrib guifg=#a6e22e gui=NONE
+hi! xmlAttrib guifg=#a6e22e gui=NONE
+
+" Force Tags to Red/Pink (#f92672)
+" This ensures the tags don't accidentally turn Cyan too
+hi! Tag guifg=#f92672 gui=NONE
+hi! htmlTagName guifg=#f92672 gui=NONE
+hi! tsxTagName guifg=#f92672 gui=NONE
+hi! jsxTagName guifg=#f92672 gui=NONE
+hi! xmlTagName guifg=#f92672 gui=NONE
+
 
 set colorcolumn=80
 set cmdheight=2
