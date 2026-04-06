@@ -46,3 +46,15 @@ require("treesitter-context").setup({
 	zindex = 20, -- The Z-index of the context window
 	on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 })
+
+vim.keymap.set("n", "[n", function()
+	require("treesitter-context").go_to_context(vim.v.count1)
+end, { silent = true })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "TreesitterContextBottom", { underline = true, sp = "Grey" })
+		vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", { underline = true, sp = "Grey" })
+	end,
+})
