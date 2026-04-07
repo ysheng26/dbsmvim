@@ -176,7 +176,7 @@ let g:lightline = {
       \ 'colorscheme': 'Tomorrow',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
@@ -335,7 +335,8 @@ nnoremap <c-l> <c-w>l
 
 let g:netrw_liststyle = 3
 
-" <leader>4
+nnoremap <leader>4 :Gitsigns preview_hunk<cr>
+
 " <leader>5
 " <leader>6
 " <leader>7
