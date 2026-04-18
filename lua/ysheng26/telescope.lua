@@ -34,9 +34,15 @@ M.find_files = function()
 		find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
 	})
 end
+M.live_grep_no_regex = function()
+	builtin.live_grep({
+		additional_args = { "--fixed-strings" },
+	})
+end
 
 vim.keymap.set("n", "<c-p>", M.find_files, { desc = "Telescope find files" })
 vim.keymap.set("n", "<leader>a", builtin.grep_string, { desc = "Telescope grep string" })
 vim.keymap.set("n", "g/", builtin.live_grep, { desc = "Telescope live grep" })
+vim.keymap.set("n", "g,", M.live_grep_no_regex, { desc = "Telescope live grep no regex" })
 vim.keymap.set("n", "<leader>m", builtin.buffers, { desc = "Telescope buffers" })
 vim.keymap.set("n", "gh", builtin.help_tags, { desc = "Telescope helptags" })
