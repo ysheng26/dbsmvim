@@ -129,7 +129,7 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'fatih/vim-go', {'for': 'go'}
 
 Plug 'itchyny/lightline.vim'
-" Plug 'Mofiqul/vscode.nvim'
+Plug 'Mofiqul/vscode.nvim'
 
 call plug#end()
 filetype plugin indent on
@@ -160,8 +160,11 @@ nnoremap N Nzzzv
 set termguicolors
 set t_Co=256
 
-set background=dark
-colorscheme unokai
+" set background=dark
+" colorscheme unokai
+
+set background=light
+colorscheme vscode
 
 set colorcolumn=80
 set cmdheight=2
